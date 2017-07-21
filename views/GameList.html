@@ -66,13 +66,13 @@
 
                                         <div><img class="blue_inner_img" data-bind="attr: { title: $data.name, src: 'content/images/'+$data.id+'.png'}"></div>
                                     </div>
-                                    <div style="float:left;position:absolute;right:2%;">
+                                    <div style="float:left;position:absolute;right:-1%;">
                                     <div style="margin-top:12px ;font-family: arial;font-size: 15px;">
                                         <div style="font-size:95%"><span data-bind="text: 'Jackpot: '+$data.lastResult.NextFirstPrize"></span></div>
                                         <div style="font-size:75%"><span data-bind="attr:{ id:'timer_'+$data.id }" class="timers">00:00:00</span></div>
                                     </div>
                                         <div class="dx-button2" data-bind="click: $parent.gameInfoBtn.bind($data),clickBubble: false" style="width:70px;margin-right:2px;margin-left:0px"><span class="dx-button-text">Info</span> </div>
-                                        <div class="dx-button2" data-bind="click: $parent.playGameBtn.bind($data),clickBubble: false" style="width:72px"><span class="dx-button-text"> Play Now </span></div>
+                                        <div class="dx-button2" data-bind="click: $parent.playGameBtn.bind($data),clickBubble: false" style="width:70px"><span class="dx-button-text"> Play Now </span></div>
                                     </div>
 
                                 </div>
