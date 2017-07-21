@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DevExpress Device Simulator</title>
+        <link rel="stylesheet" href="DemoShell.css" />
+        <link rel="stylesheet" href="Simulator/Simulator.css" />
+        <script src="Simulator/jquery-1.7.min.js"></script>
+        <script src="Simulator/Simulator.js"></script>
+
+        <script>
+            $(function() {
+                var SWITCHER_DATA = {
+
+                    // iPhone or Android phone
+                    "1": [
+                        {
+                            title: "iOS",
+                            props: {
+                                device: "iPhone5",
+                                orientation: "p"
+                            }
+                        },
+                        {
+                            title: "Android",
+                            props: {
+                                device: "androidPhone",
+                                orientation: "p"
+                            }
+                        }
+                    ],
+
+                    // iPhone or iPad
+                    "2": [
+                        {
+                            title: "Phone",
+                            props: {
+                                device: "iPhone5",
+                                orientation: "p"
+                            }
+                        },
+                        {
+                            title: "Tablet",
+                            props: {
+                                device: "iPad",
+                                orientation: "l"
+                            }
+                        }
+                    ],
+
+                    // iPhone, Android phone and WP8
+                    "3": [
+                        {
+                            title: "iOS",
+                            props: {
+                                device: "iPhone5",
+                                orientation: "p"
+                            }
+                        },
+                        {
+                            title: "Android",
+                            props: {
+                                device: "androidPhone",
+                                orientation: "p"
+                            }
+                        },
+                        {
+                            title: "Windows Phone",
+                            props: {
+                                device: "win8Phone",
+                                orientation: "p"
+                            }
+                        }
+                    ]
+
+                };
+
+                var switcherData = SWITCHER_DATA["3"];
+                if(!switcherData)
+                    switcherData = SWITCHER_DATA["1"];
+
+
+                $.each(switcherData, function(index, item) {
+
+                    function onClick() {
+                        $("#deviceFrame").dxSimulator(item.props);
+
+                        if(window.sessionStorage)
+                            window.sessionStorage.setItem("dxapp-hash", "");
+
+                        $("#deviceFrame").get(0).contentWindow.location.reload()
+                    }
+
+                    var button = $("<button></button>")
+                        .text(item.title)
+                        .click(onClick);
+                    
+                    $("#deviceSwitcher").append(button);
+                });
+                
+                $("#deviceFrame").dxSimulator(switcherData[0].props);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="deviceSwitcher">
+        </div>        
+        
+        <iframe id="deviceFrame" src="http://and.simulator.local"></iframe>                
+
+        <div class="qr-container">
+            <div>
+                <span>
+                    <img src="https://chart.googleapis.com/chart?chs=140x140&amp;cht=qr&amp;chld=L|0&amp;chl=http%3a%2f%2fphonejs.devexpress.com%2fDemos%2fKitchenSink" />
+                </span>
+            </div>
+            <div class="hint">
+                View on your device
+            </div>
+        </div>
+    </body>
+</html>

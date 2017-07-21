@@ -1,0 +1,35 @@
+
+<div data-options="dxView : { name: 'registerOtpSubmit', title: 'Playwin Registration',layout: 'empty' } ">
+	<div class="home-splash" data-options="dxContent : { targetPlaceholder: 'content' } ">
+		<div data-bind="dxLoadPanel:{message: loadPanelMsg, visible: loadPanelVisible }"></div>
+		<div>
+            <div class="home-demo-logo"></div>
+            <div class="home-dx-logo"></div>
+            
+       </div>
+		<div class="content" style="position:absolute; top:30%; left:15%; width:80%" data-bind="dxScrollView: { }">
+		
+		<div>
+			<h1 style="padding-left:0;">Thank you for<br/>
+			Registering <span data-bind="text:userName"></span>! </h1>
+			<div>Enter One Time Password</div>
+			<div>Sent On <span data-bind="text:userMobile"></span><span data-bind="text:''"></span></div>
+		</div>
+			<div class="dx-fieldset" style="margin:0px 20px 20px -20px;">
+			
+				<div class="dx-field">
+
+					<div class="dx-field-value">
+						<div data-bind="dxTextBox: { placeholder: 'OTP' , value:userOtp , valueUpdate: 'afterkeydown'}"></div>
+					</div>
+				</div>
+				<div class="dx-field">
+                    <div class="dx-field-value">
+                        <div class="dx-button1" style="padding-left: 12px;" data-bind="click: otpSubmit" onclick=""><span class="dx-button-text">Submit</span></div>
+                    </div>
+                </div>
+                
+			</div>
+		</div>
+	</div>
+</div>

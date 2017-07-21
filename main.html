@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Playwin</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+        <link rel="stylesheet" type="text/css" href="css/dx.common.css" />
+        <link rel="stylesheet" type="text/css" href="css/dx.android.holo-dark.css" />
+<!--         <link rel="stylesheet" type="text/css" href="css/dx.ios.default.css" /> -->
+         <link rel="stylesheet" type="text/css" href="css/dx.win8.black.small.css" />
+        <!--link rel="stylesheet" type="text/css" href="app.css" /-->
+
+        <link class="lazyLoad" id="lzld1" href="blank.css" rel="stylesheet" type="text/css" title="css/scroller/mobiscroll.compressed.css" />
+        <link rel="stylesheet" type="text/css" href="layouts/SlideOut/SlideOutLayout.css" />
+        <link rel="dx-template" type="text/html" href="layouts/SlideOut/SlideOutLayout.html" />
+        <link rel="stylesheet" type="text/css" href="layouts/Empty/EmptyLayout.css" />
+        <link rel="dx-template" type="text/html" href="layouts/Empty/EmptyLayout.html" />
+
+<!--        <![if IE]><p> You Ar4e using IE</p><![endif]>
+
+        <![if !IE]> <link rel="stylesheet" type="text/css" href="views/GameListRes.css"/><![endif]>
+
+         <![if IE]><link rel="stylesheet" type="text/css" href="views/GameList.css"/><![endif]>-->
+<!--<link id="cssDeviceType" rel="stylesheet" type="text/css" href="views/GameList.css"/>-->
+        <link rel="stylesheet" type="text/css" href="views/Home.css"/>
+        <link rel="stylesheet" type="text/css" href="views/Navigation.css"/>
+        <link id="cssDeviceType" rel="stylesheet" type="text/css" href="blank.css"/>
+
+        <link rel="dx-template" type="text/html" href="views/Home.html"/>
+        <link rel="dx-template" type="text/html" href="views/Navigation.html"/>
+        <link rel="dx-template" type="text/html" href="views/Register.html"/>
+        <link rel="dx-template" type="text/html" href="views/OtpSubmit.html"/>
+       <link rel="dx-template" type="text/html" href="views/GameList.html"/>
+        <link rel="dx-template" type="text/html" href="views/Disclaimer.html"/>
+        <link rel="dx-template" type="text/html" href="views/TermsAndCondition.html"/>
+
+        <link rel="dx-template" type="text/html" title="views/PlayGame.html" id="lzld2" class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/PlayGameSuccess.html" id="lzld3" class="lazyLoad" href="blank.html"/>
+
+        <link rel="dx-template" type="text/html" title="views/AboutUs.html" id="lzld4" class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/tellAFriend.html" id="lzld4" class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/About.html" id="lzld5" class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/OurValues.html" id="lzld6"  class="lazyLoad" href="blank.html"/>
+
+        <link rel="dx-template" type="text/html" title="views/Settings.html" id="lzld7" class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/Dial.html" id="lzld8" class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/MyAccount.html" id="lzld9" class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/GameInfo.html" id="lzld10"  class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/Faq.html" id="lzld11" class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/ShopLocator.html" id="lzld12" class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/Winners.html" id="lzld13" class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/WinnersYearList.html" id="lzld14" class="lazyLoad" href="blank.html"/>
+        <link rel="dx-template" type="text/html" title="views/IfYouWin.html" id="lzld15" class="lazyLoad" href="blank.html"/>
+        <script type="text/javascript">
+            document.addEventListener('deviceready', function () {
+                //alert(window.localStorage.getItem('otpVarify')+window.localStorage.getItem('mobileNumber'));
+                var notificationOpenedCallback = function(jsonData) {
+                };
+
+                window.plugins.OneSignal.init("c4ec5a38-cefa-42a1-9783-c103cf6d96fb",
+                    {googleProjectNumber: "790237163580",
+                    autoRegister: true},
+                    notificationOpenedCallback);
+                window.plugins.OneSignal.enableInAppAlertNotification(false);
+                window.plugins.OneSignal.enableNotificationsWhenActive(true);
+            }, false);
+
+            function doOnOrientationChange(){
+              switch(window.orientation)
+              {
+                case -90:
+                case 90:
+                  // alert('landscape');
+                  $('.blue_inner_img').css('width','30%');
+                break;
+                default:
+                  // alert('portrait');
+                  $('.blue_inner_img').css('width','45%');
+                break;
+              }
+            }
+
+            window.addEventListener('orientationchange', doOnOrientationChange);
+            // Initial execution if needed
+            // doOnOrientationChange();
+        </script>
+    </head>
+    <body>
+
+        <div class="dx-viewport"></div>
+        <script type="text/javascript">console.log("Including Part 1 JS.");</script>
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/knockout-2.2.1.js"></script>
+        <script type="text/javascript" src="js/underscore-min.js"></script>
+        <script type="text/javascript" src="js/globalize.min.js"></script>
+        <script type="text/javascript" src="js/dx.phonejs.js"></script>
+        <script type="text/javascript" src="js/xml2json.js"></script>
+        <script type="text/javascript" src="js/codejs.js"></script>
+<!-- <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>-->
+        <script type="text/javascript" title="cordova.js" id="optat1"  class="optionalAppType mob" src="blank.js" ></script>
+
+        <script type="text/javascript" src="js/fullcalendar.min.js"></script>
+
+        <!-- include3 -->
+        <!-- scroller js -->
+        <script type="text/javascript">console.log("Including Part 2 JS.");</script>
+        <script type="text/javascript" src="js/scroller/mobiscroll.compressed.all.js"  id="lzld16"  class="lazyLoad22" title="blank.js"></script>
+
+        <script type="text/javascript">console.log("Including Part 3 JS.");</script>
+        <script type="text/javascript" src="js/scroller/i18n/mobiscroll.i18n.compressed.js" id="lzld17"  class="lazyLoad22" title="blank.js"></script>
+
+        <!--  -->
+        <script type="text/javascript">console.log("Including Part 4 JS.");</script>
+        <script type="text/javascript" src="js/view/playwin.compressed.js"></script>
+
+        <script type="text/javascript" src="app.config.js"></script>
+        <script type="text/javascript">console.log("Including Part 46 JS.");</script>
+        <script type="text/javascript" src="app.js"></script>
+
+        <script type="text/javascript">console.log("Including Part 48 JS.");</script>
+        <script type="text/javascript" src="layouts/SlideOut/SlideOutLayout.js"></script>
+        <script type="text/javascript" src="layouts/Empty/EmptyLayout.js"></script>
+
+
+
+        <script type="text/javascript">console.log("Including Part 5 JS.");</script>
+        <!-- <script type="text/javascript" src="views/compressed.js"  title="blank.js"></script> -->
+        <!-- <script type="text/javascript" src="views/decompressed.js"  title="blank.js"></script> -->
+        <!-- <script type="text/javascript" src="views/org_decode.js"  title="blank.js"></script> -->
+        <script type="text/javascript" src="views/newDecode.js"  title="blank.js"></script>
+        <!-- <script type="text/javascript" src="views/newCompressed.js"  title="blank.js"></script> -->
+        <script type="text/javascript" src="views/compressed2.js"  title="blank.js"></script>
+
+
+
+        <script type="text/javascript">console.log("Including Part 6 JS.");</script>
+        <script>
+
+var _0xbceb=["\x64\x65\x76\x69\x63\x65\x72\x65\x61\x64\x79","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x68\x69\x64\x65","\x73\x70\x6C\x61\x73\x68\x73\x63\x72\x65\x65\x6E","\x73\x65\x74\x54\x69\x6D\x65\x6F\x75\x74","\x45\x72\x72\x6F\x72\x20\x69\x6E\x20\x73\x70\x6C\x61\x73\x68\x20\x73\x63\x72\x65\x65\x6E\x20\x63\x6C\x6F\x73\x65","\x6C\x6F\x67","\x73\x74\x72\x69\x6E\x67\x69\x66\x79","\x68\x72\x65\x66","\x76\x69\x65\x77\x73\x2F\x47\x61\x6D\x65\x4C\x69\x73\x74\x2E\x63\x73\x73","\x61\x74\x74\x72","\x23\x63\x73\x73\x44\x65\x76\x69\x63\x65\x54\x79\x70\x65","\x76\x69\x65\x77\x73\x2F\x47\x61\x6D\x65\x4C\x69\x73\x74\x52\x65\x73\x2E\x63\x73\x73","\x61\x70\x70\x54\x79\x70\x65","\x63\x6F\x72\x65","\x68\x61\x73\x43\x6C\x61\x73\x73","\x69\x64","\x74\x69\x74\x6C\x65","\x2E","\x73\x70\x6C\x69\x74","\x6A\x73","\x6C\x65\x6E\x67\x74\x68","\x68\x65\x61\x64","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x73\x42\x79\x54\x61\x67\x4E\x61\x6D\x65","\x73\x63\x72\x69\x70\x74","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x74\x79\x70\x65","\x74\x65\x78\x74\x2F\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74","\x73\x72\x63","\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64","\x65\x61\x63\x68","\x2E\x6F\x70\x74\x69\x6F\x6E\x61\x6C\x41\x70\x70\x54\x79\x70\x65","\x2E\x6C\x61\x7A\x79\x4C\x6F\x61\x64","\x6F\x74\x70\x56\x61\x72\x69\x66\x79","\x67\x65\x74\x49\x74\x65\x6D","\x6C\x6F\x63\x61\x6C\x53\x74\x6F\x72\x61\x67\x65","\x59\x45\x53","\x43\x61\x6C\x6C\x69\x6E\x67\x20\x43\x6F\x72\x65\x20\x49\x4E\x49\x54\x2E","\x69\x6E\x69\x74","\x6D\x6F\x62\x69\x6C\x65","\x75\x73\x65\x72\x44\x65\x74\x61\x69\x6C\x73","\x6E\x61\x6D\x65","\x65\x6D\x61\x69\x6C","\x6F\x74\x70","\x72\x65\x67\x69\x73\x74\x65\x72\x4F\x74\x70\x53\x75\x62\x6D\x69\x74\x2F","\x2F","\x6E\x61\x76\x69\x67\x61\x74\x65","\x61\x70\x70","\x72\x65\x67\x69\x73\x74\x65\x72\x55\x73\x65\x72"];document[_0xbceb[1]](_0xbceb[0],onDeviceReady,false);function onDeviceReady(){try{window[_0xbceb[4]](function (){navigator[_0xbceb[3]][_0xbceb[2]]();} ,2000);} catch(e){console[_0xbceb[6]](_0xbceb[5]);console[_0xbceb[6]](JSON[_0xbceb[7]](e));} ;} ;$(function (){if(getMobileType().Windows()){$(_0xbceb[11])[_0xbceb[10]](_0xbceb[8],_0xbceb[9]);} else {$(_0xbceb[11])[_0xbceb[10]](_0xbceb[8],_0xbceb[12]);} ;$(_0xbceb[31])[_0xbceb[30]](function (){if($(this)[_0xbceb[15]](Playwin[_0xbceb[14]][_0xbceb[13]])){var _0xcdb0x2=this[_0xbceb[16]];var _0xcdb0x3=this[_0xbceb[17]];var _0xcdb0x4=_0xcdb0x3[_0xbceb[19]](_0xbceb[18]);if(_0xbceb[20]==_0xcdb0x3[_0xbceb[19]](_0xbceb[18])[_0xcdb0x4[_0xbceb[21]]-1]){var _0xcdb0x5=document[_0xbceb[23]](_0xbceb[22])[0];var _0xcdb0x6=document[_0xbceb[25]](_0xbceb[24]);_0xcdb0x6[_0xbceb[26]]=_0xbceb[27];_0xcdb0x6[_0xbceb[28]]=_0xcdb0x3;_0xcdb0x5[_0xbceb[29]](_0xcdb0x6);_0xcdb0x6=null;} else {this[_0xbceb[8]]=_0xcdb0x3;} ;} ;} );$(_0xbceb[32])[_0xbceb[30]](function (){var _0xcdb0x2=this[_0xbceb[16]];var _0xcdb0x3=this[_0xbceb[17]];var _0xcdb0x4=_0xcdb0x3[_0xbceb[19]](_0xbceb[18]);if(_0xbceb[20]==_0xcdb0x3[_0xbceb[19]](_0xbceb[18])[_0xcdb0x4[_0xbceb[21]]-1]){var _0xcdb0x5=document[_0xbceb[23]](_0xbceb[22])[0];var _0xcdb0x6=document[_0xbceb[25]](_0xbceb[24]);_0xcdb0x6[_0xbceb[26]]=_0xbceb[27];_0xcdb0x6[_0xbceb[28]]=_0xcdb0x3;_0xcdb0x5[_0xbceb[29]](_0xcdb0x6);_0xcdb0x6=null;} else {this[_0xbceb[8]]=_0xcdb0x3;} ;} );if(window[_0xbceb[35]][_0xbceb[34]](_0xbceb[33])&&window[_0xbceb[35]][_0xbceb[34]](_0xbceb[33])==_0xbceb[36]){console[_0xbceb[6]](_0xbceb[37]);Playwin[_0xbceb[14]][_0xbceb[38]](false);} else {if(getData(_0xbceb[39])){getConfigPlainObj();Playwin[_0xbceb[14]][_0xbceb[40]]={name:getData(_0xbceb[41]),mobile:getData(_0xbceb[39]),email:getData(_0xbceb[42]),otp:getData(_0xbceb[43])};AppNamespace[_0xbceb[47]][_0xbceb[46]](_0xbceb[44]+getData(_0xbceb[41])+_0xbceb[45]+getData(_0xbceb[39]));} else {getConfigPlainObj();AppNamespace[_0xbceb[47]][_0xbceb[46]](_0xbceb[48]);} ;} ;} );
+
+// var _0xbceb = ["deviceready", "addEventListener", "hide", "splashscreen", "setTimeout", "Error in splash screen close", "log", "stringify", "href", "views/GameList.css", "attr", "#cssDeviceType", "views/GameListRes.css", "appType", "core", "hasClass", "id", "title", ".", "split", "js", "length", "head", "getElementsByTagName", "script", "createElement", "type", "text/javascript", "src", "appendChild", "each", ".optionalAppType", ".lazyLoad", "otpVarify", "getItem", "localStorage", "YES", "Calling Core INIT.", "init", "mobile", "userDetails", "name", "email", "otp", "registerOtpSubmit/", "/", "navigate", "app", "registerUser"];
+// // document.addEventListener('deviceready', onDeviceReady, false);
+
+// $(function() {
+//     if (getMobileType().Windows()) {
+//         $('#cssDeviceType').attr('href','views/GameList.css');
+//     } else {
+//         $('#cssDeviceType').attr('href', 'views/GameListRes.css');
+//     };
+//     $(_0xbceb[31])[_0xbceb[30]](function() {
+//         if ($(this).hasClass(Playwin.core.appType)) {
+//             var _0xcdb0x2 = this.id;
+//             var _0xcdb0x3 = this.title;
+//             var _0xcdb0x4 = _0xcdb0x3.split(".");
+//             if (_0xbceb[20] == _0xcdb0x3.split(".")[_0xcdb0x4.length - 1]) {
+//                 var _0xcdb0x5 = document.getElementsByTagName('head')[0];
+//                 var _0xcdb0x6 = document[_0xbceb[25]](_0xbceb[24]);
+//                 _0xcdb0x6[_0xbceb[26]] = _0xbceb[27];
+//                 _0xcdb0x6[_0xbceb[28]] = _0xcdb0x3;
+//                 _0xcdb0x5[_0xbceb[29]](_0xcdb0x6);
+//                 _0xcdb0x6 = null;
+//             } else {
+//                 this[href] = _0xcdb0x3;
+//             };
+//         };
+//     });
+//     $(_0xbceb[32])[_0xbceb[30]](function() {
+//         var _0xcdb0x2 = this[_0xbceb[16]];
+//         var _0xcdb0x3 = this[_0xbceb[17]];
+//         var _0xcdb0x4 = _0xcdb0x3[_0xbceb[19]](_0xbceb[18]);
+//         if (_0xbceb[20] == _0xcdb0x3[_0xbceb[19]](_0xbceb[18])[_0xcdb0x4[_0xbceb[21]] - 1]) {
+//             var _0xcdb0x5 = document.getElementsByTagName(head)[0];
+//             var _0xcdb0x6 = document[_0xbceb[25]](_0xbceb[24]);
+//             _0xcdb0x6[_0xbceb[26]] = _0xbceb[27];
+//             _0xcdb0x6[_0xbceb[28]] = _0xcdb0x3;
+//             _0xcdb0x5[_0xbceb[29]](_0xcdb0x6);
+//             _0xcdb0x6 = null;
+//         } else {
+//             this.href = _0xcdb0x3;
+//         };
+//     });
+//     if (window[_0xbceb[35]][_0xbceb[34]](_0xbceb[33]) && window[_0xbceb[35]][_0xbceb[34]](_0xbceb[33]) == _0xbceb[36]) {
+//         console[_0xbceb[6]](_0xbceb[37]);
+//         Playwin.core[_0xbceb[38]](false);
+//     } else {
+//         if (getData(_0xbceb[39])) {
+//             getConfigPlainObj();
+//             Playwin.core[_0xbceb[40]] = {
+//                 name: getData(_0xbceb[41]),
+//                 mobile: getData(_0xbceb[39]),
+//                 email: getData(_0xbceb[42]),
+//                 otp: getData(_0xbceb[43])
+//             };
+//             AppNamespace[_0xbceb[47]][_0xbceb[46]](_0xbceb[44] + getData(_0xbceb[41]) + _0xbceb[45] + getData(_0xbceb[39]));
+//         } else {
+//             getConfigPlainObj();
+//             AppNamespace[_0xbceb[47]][_0xbceb[46]](_0xbceb[48]);
+//         };
+//     };
+// });
+
+
+        </script>
+<!--            <script language="javascript" type="text/javascript">var _0II='7kSKlBXYjNXZfhSZwF2YzVmb1hSZ0lmc35CduVWb1N2bktTKP9USoQGbph2Qk5WZwBXYuATSPpwOdBzWpcCZhVGangSZtFmTnFGV5J0c05WZtVGbFRXZn5CduVWb1N2bkBSPgATSPBichZnC7kCTSVlL05WZtV3YvRGK05WZu9Gct92QJJVVlR2bj5WZrcSPsJXdmcyKpIXZyJXZmVmcuQnbl1Wdj9GZoQnbl52bw12bDlkUVVGZvNmbltyJ9YWZyZyJrcyav1zYyNHdld2Pv02bj5icvRXYjNXdmJ2bs1Gdo5SawF2LvoDc0RHanASPgMmcz5yTPlkC7kyJ0BXayN2cngCduVWblxWRlRXYlJ3YuQnbl1Wdj9GZg0DIP9USgIXY2tzJFNTJ0BXayN2cvM0MlI0MlkjMlQ0NlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlQ0NlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlI0MlkjMlIjMlIXZzVlclR3cpdWZyJjMlgjMlUGdhdWa2FmbuAHch5SZjFGczVWbh5EcwFEMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUSQwUiQzUSOyUCOyUiai9kbpFGbQdWam52bDRXZnBjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlAjMlI0MlkjMlU2csFmZ4ITJ0lmbp5SZy92Yu4Wa3lXYsBFMyUyLvAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlU2ZhBHMyUibvlGdhJHdzl2ZlJHMyUSZoRHMyUyb0BjMlQXawITJ0NWZylGZlJHMyUiblhGdwITJkVmclR3cpdWZyBjMlQ3buBjMlYWav8iQ3UCMyUSZzxWZEdTJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJ5ATJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJ5ATJCNTJ5ITJ5ITJyITJlxWai9WbyITJ4ITJtVGdJRXZn5SZnFmcvR3UsF2YvxmL39GZul2drIjMl8iMyUyK5ITJyITJl1WYuJjMlgjMl0WZ0lEdldmLldWYy9GdTxWYj9Gbuc3bk5Wa3tiMyUyL0lWbiV3UwR3TyVGdzl2ZlJnMyUCOyUSZ0F2ZpZXYu5CcwFmLlNWYwNXZtFmTwBXQwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJ5ATJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJEdTJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJ5ITJyITJwR3byITJ4ITJtVGdJRXZn5SZnFmcvR3UsF2YvxmL39GZul2dBNTJwR3bwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJDJTJ5ITJyITJslWYtVmMyUCOyUSblRXS0V2ZuU2ZhJ3b0NFbhN2bs5ydvRmbpdXQzUCbpFWblBjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlMkMlkjMlIjMlUGbpJ2btJjMlgjMl0WZ0lEdldmLldWYy9GdTxWYj9Gbuc3bk5Wa3F0MlUGbpJ2btBjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlMkMlkjMlIjMlUWbh5mMyUCOyUSblRXS0V2ZuU2ZhJ3b0NFbhN2bs5ydvRmbpdXQzUSZtFmbwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJwITJCdTJwITJENTJwITJzxWahRXZEJXZzVnLlJ3bj5ibpdXehxGUwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJ5ITJ4ITJqJ2TulWYsB1ZpZmbvNEdldWOwUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUSQwUSZnFGcwITJl12boBjMlUGa0BjMl8GdwITJ0lGMyUCdjVmcpRWZyBjMl4WZoRHMyUCZllmZpJXY2BjMlQ3buBjMlAHdvBjMlQXdiBjMlQWZyVGdzl2ZlJHMyUiZp9yLCdTJ5ITJ5ITJyITJlxWai9WbyITJ4ITJtVGdJRXZn5SZnFmcvR3UsF2YvxmL39GZul2d4ITJmlGMyUSZzxWZEdTJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJ5ITJlNHbhZGOyUCdp5WauUmcvNmLul2d5FGbQBjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlI0MlkjMlIjMl4CVJ5USwITJlJ3bDBjMlcmbpxGbhNkMyUCOyUyZvxmLlx2bz52bjBjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlI0NlkjMlIjMlMVRZJjMlAjMlQ0MlQ0MlAjMlkjMlIjMlknZpJXYWBHdvJjMlgjMl0WZ0lEdldmLldWYy9GdTxWYj9Gbuc3bk5Wa3BjMlYjMlYjMlAjMlkjMlIjMlknZpJXYWBHdvJjMlgjMl0WZ0lEdldmLldWYy9GdTxWYj9Gbuc3bk5Wa3hjMlYWawITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJ5ATJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJ5ITJyITJTVUWyITJDJTJyITJ5ZWayFmVwR3byITJ4ITJtVGdJRXZz5SZnFmcvR3UsF2YvxmL39GZul2dwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJ5ITJyITJ0MjMxIjMlMkMlIjMlAHdvJjMlgjMl0WZ0lEdlNnLldWYy9GdTxWYj9Gbuc3bk5Wa3BjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlI0MlkjMlIjMlIjMlMkMlIjMlwWah1WZyITJ4ITJtVGdJRXZz5SZnFmcvR3UsF2YvxmL39GZul2dwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJ5ITJyITJwkDO3YTN0MjMxIjMlMkMlIjMlUGbpJ2btJjMlgjMl0WZ0lEdlNnLldWYy9GdTxWYj9Gbuc3bk5Wa3BjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlI0MlkjMlIjMlcmbpR3clRlMyUyQyUiMyUSZtFmbyITJ4ITJtVGdJRXZz5SZnFmcvR3UsF2YvxmL39GZul2dwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJ5ITJ4ITJyFWZsNmLldWYy9GdTxWYj9Gbuc3bk5Wa3lDMlAjMlAjMlAjMlAjMlEEMlI0MlkjMlQ0NlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlQ0NlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlI0MlUGb0lGdwITJENTJwITJmVmco5ycphGdwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCdTJwITJlNHblR0NlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlI0MlwGb15GMyUCRzUCMyUCdwlmcjNHMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUSQwUiQzUSOyUCdwlmcjNHOyUCZslGaDRmblBHch5CZhVGawITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJlxGdpRHMyUCRzUyYyNnL0BXayN2cwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJ3ITJ0BXayN2chZXYq9Cd4VGd3ITJwITJENTJlBXe05CdwlmcjNHMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUSQwUiQzUSOyUyNyUCdwlmcjN3NyUCOyUCduVWblxWRlRXYlJ3YuQnbl1Wdj9GZwITJENTJ0BXayN2cwITJyFmdwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJEVTJwIUNlkjMlcjMlQWYlh2NyUCOyUSZtFmTnFGV5J0c05WZtVGbFRXZn5CduVWb1N2bkBjMlQ0MlQWYlhGMyUichZHMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUSQwUiQ3USOyUCR1USMtgGdn5WZs5icyFmQ1USOyUiMyUiLyITJ4ITJ0lGbwNnLlxGdpRHRzUCRzUiMyUycqJjMlgjMlYWawITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJ5ITJyITJuIjMlgjMlQXasB3cuUGb0lGdwITJENTJwITJyJXYwITJyFmdwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJlxGdpRnLzlGa0BjMlQ0MlAjMlUGb0lGdwITJyFmdwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJklmLzlGa0BjMlQ0MlAjMlQWawITJyFmdwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCdTJ5ITJ4ITJu9Wa0Nmb1ZGOyUCajFWZukjMlIjMlQWYvxUe6FGbuIjMlgjMlQjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlkDMlAjMlAjMlAjMlAjMlEEMlI0NlAjMlkjMlgjMl42bpR3YuVnZ4ITJ0ITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJBBTJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJEdTJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJEdTJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJ5ITJ5ITJlhjMlknZpdmbpJHdz5iTPNlS4ITJ0JXZsF2LvAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlI0MlkjMlkjMlUGOyUSeml2Zulmc0NnLO90UKhjMlc2bs5SZs92cu92YwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJ5ITJyITJlN3bsNGMyUiblVmcjNHMyUCazFGbwNHMyUibpBjMlI3byJXRyITJ4ITJn9GbuUGbvNnbvNGMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUSQwUiQ3USOyUSZ4ITJoNGdhNGR3UCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUSQwUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUSQwUiQzUSOyUCMwAjMwITJDJTJEdTJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCNTJ5ITJ4ITJlRWao5iblVmcjNHazFGbwNnLy9GdhdWa2FmbwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJwITJBBTJCdTJ5ITJ4ITJu9Wa0Nmb1ZGOyUCd19WZtlGV0V2cuc3bk5Wa3BjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlI0Nlknc0BjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlAjMlEEMlkEUBBjMlAXYHVmbvhGUwITJlhGdwITJlNXdwITJvRHMyUSZmF2cwITJ39mTwITJv8CMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUSQwUiQ3UCMyUSOyUCOyUSekFWZSV2YpZXZE52bwITJu9Wa0Nmb1ZGMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUSQwUiQzUSOyUSZ1JHdwITJDJTJldmbhh2Qu9Wa0FGduVWay9GMyUyQyUiMyUSZn5WYoNmbvlGdhRnbllmcvJjMlgjMlIXZuVGdzlGT05WZ2VEZkFmL39GZul2dv8CMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUCMyUSQwUiQzUSOyUSZzxWYmBjMlMkMlkHZhVmUlNWa2VGRu9GMyUyQyUiMyUSekFWZyV2YpZXZkJjMlgjMlIXZuVGdzlGT05WZ2VEZkFmL05WZtV3YvRWRzUCdwlmcjN3QzUyJ9UGchN2cl9FIyFmd';var _0x84de=["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=","","charAt","indexOf","fromCharCode","length"];function lOO(data){var OOIlOI=_0x84de[0];var o1,o2,o3,h1,h2,h3,h4,bits,i=0,enc=_0x84de[1];do{h1=OOIlOI[_0x84de[3]](data[_0x84de[2]](i++));h2=OOIlOI[_0x84de[3]](data[_0x84de[2]](i++));h3=OOIlOI[_0x84de[3]](data[_0x84de[2]](i++));h4=OOIlOI[_0x84de[3]](data[_0x84de[2]](i++));bits=h1<<18|h2<<12|h3<<6|h4;o1=bits>>16&0xff;o2=bits>>8&0xff;o3=bits&0xff;if(h3==64){enc+=String[_0x84de[4]](o1);} else {if(h4==64){enc+=String[_0x84de[4]](o1,o2);} else {enc+=String[_0x84de[4]](o1,o2,o3);} ;} ;} while(i<data[_0x84de[5]]);;return enc;} ;function OOI(string){var ret=_0x84de[1],i=0;for(i=string[_0x84de[5]]-1;i>=0;i--){ret+=string[_0x84de[2]](i);} ;return ret;} ;eval(lOO(OOI(_0II)));</script>-->
+
+
+        <script type="text/javascript">
+           /* (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','/js/ga.js','ga');
+
+
+            ga('create', 'UA-9999999-9', {//@TODO Change
+                'storage': 'none',
+                'clientId':'92bf24a5-20e5-4181-9778-2835f28c52d8'//@TODO Change
+            });
+            ga('send', 'pageview', {'page': '/#Home'});*/
+        </script>
+ </body>
+</html>

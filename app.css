@@ -1,0 +1,65 @@
+html, 
+body, 
+#view-port {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.dx-theme-win8 .layout-content {
+    background: #1D1D1D;
+}
+.dx-theme-win8 .dx-toolbar .dx-toolbar-label {
+    font-size: 20pt;
+    padding-top: 5px;
+}
+.dx-theme-win8 .dx-toolbar {
+    height: 45px;
+    opacity: 1;
+}
+.dx-theme-win8 .slideout-layout .layout-header {
+    height: 45px;
+}
+.dx-theme-win8 .slideout-layout .layout-content {
+    top: 45px;
+}
+.dx-theme-win8 .dx-toolbar .dx-toolbar-item.dx-toolbar-button {
+    padding: 0 9px;
+}
+.dx-theme-win8 .dx-toolbar .dx-button.dx-button-back .dx-button-back-arrow {
+    width: 20px;
+    height: 20px;
+}
+.dx-theme-win8 .dx-button .dx-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.block {
+    /*position: absolute;
+    height: 260px;
+    width: 320px;
+    left: 50px;
+    top: 50px;*/
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1.5s;
+}
+.rotated{
+    -webkit-transform: rotateY(180deg);
+}
+.side{
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    -webkit-box-shadow: 0 2px 5px #666;
+}
+.front{
+    /*height: 260px;
+    width: 320px;*/
+}
+.back{
+    /*height: 280px;
+    width: 180px;
+    padding: 10px;*/
+    -webkit-transform: rotateY(180deg);
+}

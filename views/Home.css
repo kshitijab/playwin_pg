@@ -1,0 +1,529 @@
+.home-splash
+{
+	height: 100%;
+	cursor: pointer;
+	background: #237ac8;
+	background-attachment: fixed;
+	background-image: url("../content/images/bg.png");
+	background-repeat: repeat;
+	background-position: center center;
+}
+
+.home-demo-logo
+{
+	width: 115px;
+	background: url("../content/images/new_Logo.jpg") no-repeat center center;
+	background-size: 80% auto;
+	margin: 2% auto 2%;
+	height: 115px;
+}
+
+.home-dx-logo
+{
+	position: absolute;
+	bottom: 20px;
+	height: 22px;
+	width: 100%;
+}
+
+.contentHome {
+	margin-left: auto;
+	margin-right: auto;
+	width:285px;
+	overflow:hidden;
+	text-align:center;
+}
+
+div.centerbox-outer{
+	margin: 5px auto;
+	float: left;
+	left: 50%;
+	position: relative;
+}
+
+div.centerbox-inner{
+	float: left;
+	position: relative;
+}
+
+.adSpaceHome{
+	width:260px;
+	height:45px;
+	background-size: 100% auto;
+	margin: 2% auto;
+	text-align: center;
+	clear:both;
+}
+
+.adSpaceHomeBig{
+	width:260px;
+	height:120px;
+	background-size: 100% auto;
+	margin: 2% auto;
+	text-align: center;
+	clear:both;
+}
+
+.youTube{
+	background: url("../content/images/social/youTube.png") no-repeat center center;
+	width:40px;
+	height:40px;
+	background-size: 90% auto;
+	margin:0px 5px;
+	display: inline-block;
+}
+
+.facebook{
+	background: url("../content/images/social/facebook.png") no-repeat center center;
+	width:40px;
+	height:40px;
+	background-size: 90% auto;
+	display: inline-block;
+	margin:0px 5px;
+}
+
+.twitter{
+	background: url("../content/images/social/twitter.png") no-repeat center center;
+	width:40px;
+	background-size: 90% auto;
+	display: inline-block;
+	height:40px;
+	margin:0px 5px;
+}
+
+.blogger{
+	background: url("../content/images/social/blogger.png") no-repeat center center;
+	width:40px;
+	background-size: 90% auto;
+	display: inline-block;
+	height:40px;
+	margin:0px 5px;
+}
+
+.insta{
+	background: url("../content/images/social/ig-logo.png") no-repeat center center;
+	width:40px;
+	background-size: 90% auto;
+	display: inline-block;
+	height:40px;
+	margin:0px 5px;
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* Edited by Neha - start */
+
+.homeButton {
+	background-color: #005BA2;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.homeButton img {
+	margin-top: 4px;
+}
+
+.homeButton .dx-button-text {
+	text-transform: uppercase;
+	display: block;
+}
+
+.adSpaceHome {
+	margin: 20px auto 40px auto;
+}
+
+.youTube {
+	width: 50px;
+	height: 35px;
+}
+
+.facebook, .twitter, .insta {
+	width: 35px;
+	height: 35px;
+}
+
+.layout-toolbar.dx-toolbar {
+    background: #222D70;
+}
+
+.dx-theme-android .layout-toolbar .dx-button .dx-button-content {
+    background-color: #005BA2;
+}
+
+.dx-theme-android .dx-list .dx-list-group-header {
+	border-bottom: 0;
+}
+
+/* Register User Screen */
+
+.home-demo-logo {
+	background: url(../content/images/playwin-logo1.png) no-repeat center center;
+	background-size: 80% auto;
+}
+
+.dx-fieldset {
+	margin: 0px 20px 20px 4%;
+}
+
+.dx-fieldset .dx-field-value {
+	width: 96%;
+	padding-top: 0 !important;
+}
+
+.dx-editbox-input {
+	padding: 10px 14px !important;
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+}
+
+.dx-button1 {
+	background-color: #002D65;
+	color: #FFFFFF;
+	background: #002D65 url(../content/images/arrow.png) no-repeat 95% 7px;
+}
+
+.checkbox-cont {
+	padding: 5px;
+}
+
+.checkbox-cont p {
+	margin: 8px 0px;
+	padding: 3px;
+}
+
+/* Checkbox Styling - Start */
+
+/* Base for label styling */
+.checkbox-cont [type="checkbox"]:not(:checked),
+.checkbox-cont [type="checkbox"]:checked {
+	position: absolute;
+	left: -9999px;
+}
+.checkbox-cont [type="checkbox"]:not(:checked) + label,
+.checkbox-cont [type="checkbox"]:checked + label {
+	position: relative;
+	padding-left: 22px;
+	cursor: pointer;
+}
+
+/* checkbox aspect */
+.checkbox-cont [type="checkbox"]:not(:checked) + label:before,
+.checkbox-cont [type="checkbox"]:checked + label:before {
+	content: '';
+	position: absolute;
+	left: 0; top: 0;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #CCCCCC;
+	background: #fff;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+}
+/* checked mark aspect */
+.checkbox-cont [type="checkbox"]:not(:checked) + label:after,
+.checkbox-cont [type="checkbox"]:checked + label:after {
+	content: '✔';
+	position: absolute;
+	top: 1px;
+    left: 2px;
+	font-size: 1.3em;
+	line-height: 0.8;
+	color: #002D65;
+	transition: all .2s;
+}
+/* checked mark aspect changes */
+.checkbox-cont [type="checkbox"]:not(:checked) + label:after {
+	opacity: 0;
+	transform: scale(0);
+}
+.checkbox-cont [type="checkbox"]:checked + label:after {
+	opacity: 1;
+	transform: scale(1);
+}
+/* disabled checkbox */
+.checkbox-cont [type="checkbox"]:disabled:not(:checked) + label:before,
+.checkbox-cont [type="checkbox"]:disabled:checked + label:before {
+	box-shadow: none;
+	border-color: #bbb;
+  	background-color: #ddd;
+}
+.checkbox-cont [type="checkbox"]:disabled:checked + label:after {
+  	color: #999;
+}
+.checkbox-cont [type="checkbox"]:disabled + label {
+  	color: #aaa;
+}
+/* accessibility */
+.checkbox-cont [type="checkbox"]:checked:focus + label:before,
+.checkbox-cont [type="checkbox"]:not(:checked):focus + label:before {
+  	border: 2px dotted blue;
+}
+
+/* hover style just for information */
+.checkbox-cont label {
+  	color: #000000;
+}
+
+/* Checkbox Styling - End */
+
+/* Register User Screen */
+
+/* Slideout - Start */
+
+.dx-theme-android .dx-black-background {
+	background: #3A4690;
+}
+
+.slideout-layout .navigation-list .dx-list .dx-list-item {
+    text-shadow: none;
+    color: #FFFFFF;
+    border-top: 0;
+    border-bottom: 1px solid #5589BD;
+}
+
+.slideout-layout .navigation-list .dx-list .dx-list-item .dx-icon {
+	display: none;
+}
+
+.slideout-layout .navigation-list .dx-list .dx-list-item .dx-navigation-item {
+	font-size: 22px;
+}
+
+/* Slideout - End */
+
+
+/* Play Game - Start */
+
+.blue .dx-button2 {
+	background-color: #005BA2;
+}
+
+.yellow .dx-button2 {
+	background-color: #222D70;
+}
+
+.yellow .dx-button2 .dx-button-text {
+	font-weight: normal;
+}
+
+.dwo {
+	opacity: 0.4;
+}
+
+.dwsc .dww {
+	background-image: -webkit-gradient(linear, 0 0, 0 179, from(#4f4417), color-stop(0.039, #745f0e), color-stop(0.083, #ab8800), color-stop(0.094, #b99200), color-stop(0.106, #c69d00), color-stop(0.111, #cda200), color-stop(0.122, #d9ac00), color-stop(0.167, #fecb00), color-stop(0.184, #ffd004), color-stop(0.189, #ffd206), color-stop(0.201, #ffd50b), color-stop(0.212, #ffd810), color-stop(0.234, #ffdd1c), color-stop(0.251, #ffe126), color-stop(0.312, #ffec51), color-stop(0.34, #fff065), color-stop(0.374, #fff47d), color-stop(0.391, #fff687), color-stop(0.418, #fff897), color-stop(0.435, #fff99e), color-stop(0.469, #fffaa8), color-stop(0.625, #fff47c), color-stop(0.636, #fff375), color-stop(0.648, #fff26e), color-stop(0.67, #ffef60), color-stop(0.687, #ffed54), color-stop(0.72, #ffe83e), color-stop(0.765, #ffe022), color-stop(0.815, #ffd50a), color-stop(0.826, #ffd206), color-stop(0.843, #ffce01), color-stop(0.854, #fbc800), color-stop(0.871, #eab900), color-stop(0.877, #eab900), color-stop(0.877, #e3b300), color-stop(0.899, #c19900), color-stop(0.905, #b99200), color-stop(0.927, #937606), color-stop(0.972, #534716), color-stop(0.994, #423918), to(#423918));
+	background-image: -webkit-linear-gradient(#4f4417, #745f0e 3.9%, #ab8800 8.3%, #b99200 9.4%, #c69d00 10.6%, #cda200 11.1%, #d9ac00 12.2%, #fecb00 16.7%, #ffd004 18.4%, #ffd206 18.9%, #ffd50b 20.1%, #ffd810 21.2%, #ffdd1c 23.4%, #ffe126 25.1%, #ffec51 31.2%, #fff065 34%, #fff47d 37.4%, #fff687 39.1%, #fff897 41.8%, #fff99e 43.5%, #fffaa8 46.9%, #fff47c 62.5%, #fff375 63.6%, #fff26e 64.8%, #ffef60 67%, #ffed54 68.7%, #ffe83e 72%, #ffe022 76.5%, #ffd50a 81.5%, #ffd206 82.6%, #ffce01 84.3%, #fbc800 85.4%, #eab900 87.1%, #eab900 87.7%, #e3b300 87.7%, #c19900 89.9%, #b99200 90.5%, #937606 92.7%, #534716 97.2%, #423918 99.4%, #423918);
+	background-image: -moz-linear-gradient(#4f4417, #745f0e 3.9%, #ab8800 8.3%, #b99200 9.4%, #c69d00 10.6%, #cda200 11.1%, #d9ac00 12.2%, #fecb00 16.7%, #ffd004 18.4%, #ffd206 18.9%, #ffd50b 20.1%, #ffd810 21.2%, #ffdd1c 23.4%, #ffe126 25.1%, #ffec51 31.2%, #fff065 34%, #fff47d 37.4%, #fff687 39.1%, #fff897 41.8%, #fff99e 43.5%, #fffaa8 46.9%, #fff47c 62.5%, #fff375 63.6%, #fff26e 64.8%, #ffef60 67%, #ffed54 68.7%, #ffe83e 72%, #ffe022 76.5%, #ffd50a 81.5%, #ffd206 82.6%, #ffce01 84.3%, #fbc800 85.4%, #eab900 87.1%, #eab900 87.7%, #e3b300 87.7%, #c19900 89.9%, #b99200 90.5%, #937606 92.7%, #534716 97.2%, #423918 99.4%, #423918);
+	background-image: -o-linear-gradient(#4f4417, #745f0e 3.9%, #ab8800 8.3%, #b99200 9.4%, #c69d00 10.6%, #cda200 11.1%, #d9ac00 12.2%, #fecb00 16.7%, #ffd004 18.4%, #ffd206 18.9%, #ffd50b 20.1%, #ffd810 21.2%, #ffdd1c 23.4%, #ffe126 25.1%, #ffec51 31.2%, #fff065 34%, #fff47d 37.4%, #fff687 39.1%, #fff897 41.8%, #fff99e 43.5%, #fffaa8 46.9%, #fff47c 62.5%, #fff375 63.6%, #fff26e 64.8%, #ffef60 67%, #ffed54 68.7%, #ffe83e 72%, #ffe022 76.5%, #ffd50a 81.5%, #ffd206 82.6%, #ffce01 84.3%, #fbc800 85.4%, #eab900 87.1%, #eab900 87.7%, #e3b300 87.7%, #c19900 89.9%, #b99200 90.5%, #937606 92.7%, #534716 97.2%, #423918 99.4%, #423918);
+	background-image: linear-gradient(#4f4417, #745f0e 3.9%, #ab8800 8.3%, #b99200 9.4%, #c69d00 10.6%, #cda200 11.1%, #d9ac00 12.2%, #fecb00 16.7%, #ffd004 18.4%, #ffd206 18.9%, #ffd50b 20.1%, #ffd810 21.2%, #ffdd1c 23.4%, #ffe126 25.1%, #ffec51 31.2%, #fff065 34%, #fff47d 37.4%, #fff687 39.1%, #fff897 41.8%, #fff99e 43.5%, #fffaa8 46.9%, #fff47c 62.5%, #fff375 63.6%, #fff26e 64.8%, #ffef60 67%, #ffed54 68.7%, #ffe83e 72%, #ffe022 76.5%, #ffd50a 81.5%, #ffd206 82.6%, #ffce01 84.3%, #fbc800 85.4%, #eab900 87.1%, #eab900 87.7%, #e3b300 87.7%, #c19900 89.9%, #b99200 90.5%, #937606 92.7%, #534716 97.2%, #423918 99.4%, #423918);
+}
+
+.dwbg {
+	background-image: -webkit-gradient(linear, 0 0, 15 377, color-stop(0.01, #0c257d), color-stop(0.687, #050f32), color-stop(0.989, #050f32), color-stop(0.989, rgba(0, 0, 0, 0)));
+	background-image: -webkit-linear-gradient(272.27847110648264deg, #0c257d 1%, #050f32 68.7%, #050f32 98.9%, rgba(0, 0, 0, 0) 98.9%);
+	background-image: -moz-linear-gradient(272.27847110648264deg, #0c257d 1%, #050f32 68.7%, #050f32 98.9%, rgba(0, 0, 0, 0) 98.9%);
+	background-image: -o-linear-gradient(272.27847110648264deg, #0c257d 1%, #050f32 68.7%, #050f32 98.9%, rgba(0, 0, 0, 0) 98.9%);
+	background-image: linear-gradient(177.72152889351736deg, #0c257d 1%, #050f32 68.7%, #050f32 98.9%, rgba(0, 0, 0, 0) 98.9%)
+}
+
+.dwbg .dwb {
+	background: #FDFDFD;
+	background: linear-gradient(#FDFDFD 50%,#D1D1D1 50%);
+	background: -webkit-gradient(linear,left bottom,left top,color-stop(0.5,#D1D1D1),color-stop(0.5,#FDFDFD));
+	background: -webkit-linear-gradient(#FDFDFD 50%,#D1D1D1 50%);
+	background: -moz-linear-gradient(#FDFDFD 50%,#D1D1D1 50%);
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+.dwwc {
+	background: #2A367E;
+}
+
+.dwsc .dwwl {
+	background: #2A367E;
+}
+
+.dwwo {
+	background: linear-gradient(#444 0,rgba(15,80,140,0) 10%,rgba(15,80,140,0) 90%,#444 100%);
+	background: -webkit-gradient(linear,left bottom,left top,from(#444),color-stop(0.20,rgba(15,80,140,0)),color-stop(0.90,rgba(15,80,140,0)),to(#444));
+	background: -webkit-linear-gradient(#444 0,rgba(15,80,140,0) 10%,rgba(15,80,140,0) 90%,#444 100%);
+	background: -moz-linear-gradient(#444 0,rgba(15,80,140,0) 10%,rgba(15,80,140,0) 90%,#444 100%);
+}
+
+
+.Tab {
+	background: transparent;
+	border-bottom: 4px solid #222D70;
+}
+
+.Tab ul li div {
+
+	background: #5A5A5A;
+	border-color: #5A5A5A;
+	color: #FFFFFF;
+
+	font-weight: normal;
+	font-size: 100%;
+	
+	margin-top: 10px;
+
+	border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.Tab div.sel {
+	background: #222D70;
+	border-color: #222D70;
+	color: #FFFFFF;
+
+	font-weight: bold;
+
+	padding: 3px 10px;
+	margin-top: 10px;
+
+	border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.stepTitle {
+	color: #222D70;
+	font-weight: bold;
+	margin-left: 0;
+}
+
+.stepNo {
+	background: transparent;
+	color: #222D70;
+	font-weight: bold;
+}
+
+.stepSide {
+	background: transparent;
+}
+
+.dx-theme-android .layout-content .dx-button .dx-button-content {
+	background: #222D70;
+}
+
+.dx-button .dx-button-text {
+	color: #FFFFFF;
+	font-size: 13px !important;
+	padding: 5px;
+}
+
+.panel th, .prizeStructure th {
+	background: #222D70;
+	color: #FFFFFF;
+	text-shadow: none;
+	font-weight: normal;
+}
+
+.panel th:last-child {
+	background: transparent;
+	border-bottom: 0;
+}
+
+.panel td, .prizeStructure td {
+	background: #005BA2;
+	color: #FFFFFF;
+	padding:0px;
+}
+
+.panel td:last-child {
+	background: transparent;
+}
+
+#pnlDetails .deleteIcon {
+	margin-left: 4px;
+}
+
+#pnlDetails table {
+    border: none;
+    border-collapse: collapse;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+#pnlDetails .textbox {
+    padding: 5px !important;
+    margin: 2px;
+
+    -webkit-box-shadow: none;
+	box-shadow: none;
+    
+    border: 1px solid #858F9D;
+}
+
+#pnlDetails .dx-button {
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+#draw_options {
+	background: #E3E5E6;
+    padding: 8px;
+    border-color:grey
+}
+#draws_table td{
+    padding-left:12px;
+}
+
+.play_game_img {
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+
+#pnlDetails .form-label {
+	color: #222D70;
+	font-weight:bold;
+}
+
+.dx-theme-android-typography {
+	color: #000000;
+}
+
+.playBall {
+	width:25px;
+	height:30px;
+	float:left;
+	background:url("../content/images/play_ball_sm.png") no-repeat;
+	padding:6px 0 0 10px;
+	font-size:100%;
+	color:#4d5363;
+}
+
+.playBallBig {
+	width:30px;
+	height:40px;
+	float:left;
+	background:url("../content/images/play_ball_big.png") no-repeat;
+	padding:8px 0 0 13px;
+	font-size:100%;
+    margin-left: 10px;
+    color: #222d70;
+    font-weight: bold;
+    line-height: 26px;
+}
+
+.dww{
+	min-width: 30px !important;
+	height:100px!important;
+}
+
+/* Play Game - End */
+
+
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	font-family: 'Roboto', 'Droid Sans', Arial, sans-serif;
+}
+
+.dx-button2 .dx-button-text {
+	font-family: 'Roboto', 'Droid Sans', Arial, sans-serif;
+}*/
+
+/* Edited by Neha - end */
+
+/* ---------------------------------------------------------------------- */

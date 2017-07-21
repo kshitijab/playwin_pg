@@ -1,0 +1,155 @@
+<div data-options="dxView : { name: 'gamesList'} ">
+    <div
+        data-options="dxContent : { targetPlaceholder: 'content' }">
+
+        <div id="popup" data-bind="dxPopup: { visible:isShowNoOfResultList , fullScreen:false , height:340 } " >
+            <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
+                <div class="title-button" data-bind="dxButton: { icon: 'close', clickAction:hideNoOfResultList }"></div>
+                <h2 data-bind="text:resultTitle()+' Results'"></h2>
+            </div>
+            <div data-options="dxTemplate : { name: 'content' } ">
+                <div class="popup-content">
+                    <div  data-bind="dxList:{dataSource: noOfResultList, grouped:false }">
+                        <div data-options="dxTemplate : { name: 'item' }" data-bind="attr: { id: 'noResult_'+$data.id  }, click:$parent.showOverLayResults.bind($data,$data.id)">
+                            <div class="shopupper"	data-bind="attr: { id: 'upper_'+$data.id }">
+                                <div class="year" data-bind="text:$data.caption" style="font-size:80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popup" data-bind="dxPopup: { visible:isShowMoreBalls , fullScreen:false , height:230 } " >
+            <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
+                <div class="title-button" data-bind="dxButton: { icon: 'close', clickAction:hideMoreBalls }"></div>
+                <h2 data-bind="text:moreBallsTitle"></h2>
+            </div>
+            <div data-options="dxTemplate : { name: 'content' } ">
+                <div class="popup-content">
+                    <div  style="font-size:90%" data-bind="html:moreBallsHtml"></div>
+                </div>
+            </div>
+        </div>
+        <div data-bind="dxLoadPanel:{message: loadPanelMsg, visible: loadPanelVisible }"></div>
+        <div id="popup" data-bind="dxPopup: { visible:overlayVisible, fullScreen:true}">
+            <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
+                <div class="title-button" data-bind="dxButton: { icon: 'close', clickAction:hidePopup }"></div>
+                <h2 data-bind="text:resultTitle()+' Results'"></h2>
+            </div>
+            <div data-options="dxTemplate : { name: 'content' }" >
+                <div class="popup-content">
+
+                    <div class="adSpaceHome"><a data-bind="click:openBannerRUrl.bind($data,bannerImgRUrl())"><img data-bind="attr:{src:pastResultBannerUrl}"></a></div>
+
+                    <div  data-bind="dxList: { items: overLayResults, grouped:false },attr:{'style':'height:'+($(window).height()-175)+'px'}">
+                        <div data-options="dxTemplate:{name:'item'}">
+                            <div data-bind="text:$data.DrawDate" style="font-size:90%"></div>
+                            <div style="font-size:90%">Draw Id: <span style="font-size:90%" data-bind="text:$data.DrawID" ></span></div>
+                            <div  style="font-size:90%; white-space:normal"><span data-bind="html:$data.ResultHtml"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tabs_div" data-bind="if:type=='results'">
+            <div id="tabs" data-bind="dxTabs: { items: tabs, selectedIndex: selectedTab ,itemClickAction: tabClicked}"></div>
+        </div>
+        <div  data-options="dxScrollView: { }">
+
+            <div data-bind="foreach: dataSourceNew" >
+                <div data-bind="attr:{class:'gameBox'}"  >
+                    <div class="upper"	data-bind="if:$parent.type!='results',attr: { id: 'upper_'+$data.id}">
+                        <section class="passbook rev-rotate-3dX"	data-bind="attr: { id: 'passbook_'+$data.id}">
+                            <div data-bind="attr: { id: 'gli_1_'+$data.id, class:'face '+$parent.getFrontBackClass($parent.type,1)} ,click: $parent.myDivHandler.bind($data)">
+                                <div class="blue">
+                                    <div  style="float:left;position:relative; padding:10px 5px 0px;">
+
+                                        <div><img class="blue_inner_img" data-bind="attr: { title: $data.name, src: 'content/images/'+$data.id+'.png'}"></div>
+                                    </div>
+                                    <div style="float:left;position:absolute;right:2%;">
+                                    <div style="margin-top:12px ;font-family: arial;font-size: 15px;">
+                                        <div style="font-size:95%"><span data-bind="text: 'Jackpot: '+$data.lastResult.NextFirstPrize"></span></div>
+                                        <div style="font-size:75%"><span data-bind="attr:{ id:'timer_'+$data.id }" class="timers">00:00:00</span></div>
+                                    </div>
+                                        <div class="dx-button2" data-bind="click: $parent.gameInfoBtn.bind($data),clickBubble: false" style="width:70px;margin-right:2px;margin-left:0px"><span class="dx-button-text">Info</span> </div>
+                                        <div class="dx-button2" data-bind="click: $parent.playGameBtn.bind($data),clickBubble: false" style="width:72px"><span class="dx-button-text"> Play Now </span></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div data-bind="attr: { id: 'gli_2_'+$data.id, class:'face '+$parent.getFrontBackClass($parent.type,2)},click: $parent.myDivHandler.bind($data)">
+                                <div class="yellow">
+                                    <div  style="float:left;position:relative; padding:10px 10px 10px;">
+
+                                    </div>
+                                    <div>
+                                        <div style="float:left;position:absolute;top:55px;right:2%;">
+                                            <!--                                         <img class="icon-result" data-bind="click: $parent.myDivHandler.bind($data)"/> -->
+                                            <div class="dx-button2" data-bind="click: $parent.gameInfoBtn.bind($data),clickBubble: false" style="width:70px;margin-right:5px;"><span class="dx-button-text">Info</span></div>
+                                            <div class="dx-button2" data-bind="click: $parent.showNoOfResultList.bind($data), clickBubble: false" style="width:84px"><span class="dx-button-text"> Past Results </span></div>
+                                        </div>
+                                        <div style="position:absolute;top:63px;left:8px; font-size:70%;max-width: 94px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;" data-bind="text:$data.name"></div>
+                                        <div style="margin: 5px 10px;">
+                                            <div  style="font-size:70%; float:left" data-bind="text:$data.lastResult.DrawDate"></div>
+                                            <div  style="font-size:70%; float: left; margin-left:5px" data-bind="if: $data.lastResult.RolldownAmount!=''">Rolldown: <span data-bind="text:$data.lastResult.RolldownAmount"></span></div>
+                                            <div  style="font-size:90%; clear:both" data-bind="html: $data.lastResult.ResultHtml"></div>
+                                            <div id='more_balls' class='moreballs' data-bind="if: $data.lastResult.isMoreBalls , click: $parent.showMoreBalls.bind($data.lastResult) , clickBubble: false" >View Result</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class="upper"	data-bind="if:$parent.type=='results',attr: { id: 'upper_'+$data.id}">
+
+                        <section class="passbook rev-rotate-3dX"	data-bind="attr: { id: 'passbook_'+$data.id}">
+                           <div data-bind="attr: { id: 'gli_2_'+$data.id, class:'face '+$parent.getFrontBackClass($parent.type,2)},click: $parent.myDivHandler.bind($data)">
+                                <div class="yellow">
+                                    <div  style="float:left;position:relative; padding:15px 5px 7px;">
+
+                                    </div>
+                                    <div>
+                                        <div style="float:left;position:absolute;top:55px;right:2%;">
+                                            <!--                                         <img class="icon-result" data-bind="click: $parent.myDivHandler.bind($data)"/> -->
+                                            <div class="dx-button2" data-bind="click: $parent.gameInfoBtn.bind($data),clickBubble: false" style="width:70px;margin-right:5px;"><span class="dx-button-text">Info</span></div>
+                                            <div class="dx-button2" data-bind="click: $parent.showNoOfResultList.bind($data), clickBubble: false" style="width:84px"><span class="dx-button-text"> Past Results </span></div>
+                                        </div>
+                                        <div style="position:absolute;top:63px;left:8px; font-size:70%;max-width: 94px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;" data-bind="text:$data.name"></div>
+                                        <div style="margin: 5px 10px;">
+                                            <div  style="font-size:70%; float:left" data-bind="text:$data.lastResult.DrawDate"></div>
+                                            <div  style="font-size:70%; float: left; margin-left:5px" data-bind="if: $data.lastResult.RolldownAmount!=''">Rolldown: <span data-bind="text:$data.lastResult.RolldownAmount"></span></div>
+                                            <div  style="font-size:90%; clear:both" data-bind="html: $data.lastResult.ResultHtml"></div>
+                                            <div id='more_balls' class='moreballs' data-bind="if: $data.lastResult.isMoreBalls , click: $parent.showMoreBalls.bind($data.lastResult) , clickBubble: false" >View Result</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-bind="attr: { id: 'gli_1_'+$data.id, class:'face '+$parent.getFrontBackClass($parent.type,1)} ,click: $parent.myDivHandler.bind($data)">
+                                <div class="blue">
+                                    <div  style="float:left;position:relative; padding:10px 5px 0px;">
+
+                                        <div><img class="blue_inner_img" data-bind="attr: { title: $data.name, src: 'content/images/'+$data.id+'.png'}"></div>
+                                    </div>
+                                    <div style="float:left;position:absolute;right:2%;">
+                                        <div style="margin-top:12px ;font-family: arial;font-size: 15px;">
+                                            <div style="font-size:95%"><span data-bind="text: 'Jackpot: '+$data.lastResult.NextFirstPrize"></span></div>
+                                            <div style="font-size:75%"><span data-bind="attr:{ id:'timer_'+$data.id }" class="timers">00:00:00</span></div>
+                                        </div>
+                                        <div class="dx-button2" data-bind="click: $parent.gameInfoBtn.bind($data),clickBubble: false" style="width:70px;margin-right:5px;margin-left:0px;"><span class="dx-button-text">Info</span> </div>
+                                        <div class="dx-button2" data-bind="click: $parent.playGameBtn.bind($data),clickBubble: false" style="width:72px"><span class="dx-button-text"> Play Now </span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div >
+
+                <div class="adSpaceHomeBig"><a data-bind="click:openBannerRUrl.bind($data,bannerImgRUrl())"><img data-bind="attr:{src:bannerImgUrl}"></a></div></div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div data-options="dxView : { name: 'playGameSuccess'  } ">
+  <div class="form" data-options="dxContent : { targetPlaceholder: 'content' },dxScrollView: { } ">
+  <div style="text-align: center;margin-top: 18px;"><img width="60%" border="1"  data-bind="attr: { title: $data.name, src: 'content/images/'+Playwin.play.jsonDetails.currJackpot.id+'.png'}"/></div>
+    <div data-bind="foreach: { data: tickets.tickets , as: 'ticket' }" class="ticketsSucccess">
+      <div data-bind="if: ticket.err">
+        <div data-bind="text: ticket.errMsg"></div>
+      </div>
+
+      <div data-bind="ifnot: ticket.err" class="resultTable">
+
+        <div data-bind="foreach: { data: ticket.details.Panel , as: 'panel' }">
+
+        <div  class="resultRow">
+          <div data-bind="text: Playwin.play.jsonDetails.currJackpot.id == 9 ? (((_.initial(_.compact(panel.BetLine.split(' ')))).toString()).replace(',', ' ')) : panel.BetLine" class="resultData"></div>
+          <!-- <div data-bind="text: function(){var myData = panel.BetLine.split(" "); return (myData.pop());}" class="resultData"></div> -->
+          <!-- <div data-bind="text: panel.LP==0 ? '' : ' LP' " class="resultData"></div> -->
+          </div>
+        </div>
+
+
+        <div class="resultRow" style="margin-top:10px">
+          <div class="resultTitle">Total No Of Bets</div>
+          <div data-bind="text: ( ticket.details.Panel.length ? ticket.details.Panel.length : '1' )" class="resultData"></div>
+        </div>
+        <div class="resultRow">
+          <div class="resultTitle">M.R.P (Incl all taxes)</div>
+          <div data-bind="text: ticket.details.Mrp" class="resultData"></div>
+        </div>
+        <div class="resultRow">
+          <div class="resultTitle">Total </div>
+          <div data-bind="text: ticket.details.Cost" class="resultData"></div>
+        </div>
+        <div class="resultRow">
+          <div class="resultTitle">Bet Date </div>
+          <div data-bind="text: ticket.details.BetDate" class="resultData"></div>
+        </div>
+        <div class="resultRow">
+          <div class="resultTitle">Draw </div>
+          <div data-bind="text: ticket.details.DrawID" class="resultData"></div>
+          <div class="resultTitle" style="padding-left:10px"> on </div>
+          <div data-bind="text: ticket.details.DrawDate" class="resultData"></div>
+        </div>
+        <div class="resultRow">
+          <div data-bind="text: ticket.details.TSN" class="resultData"></div>
+          <div data-bind="text: ticket.details.SLSN" class="resultData"></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="resultTable">
+    <div class="resultRow">
+      <div data-bind="dxButton: {text: 'Play Again'},click: playGameBtn , clickBubble: false"></div>
+    </div>
+    <div class="resultRow">
+     <div style="font-size:1.1em; font-weight:bold">Your Card Balance is: <span data-bind="text: tickets.CardBalance"></span></div>
+          </div>
+      <!-- add here-->
+      <div class="adSpaceHomeBig"><a data-bind="click:openBannerRUrl.bind($data,bannerImgRUrl())"><img data-bind="attr:{src:bannerImgUrl}"></a></div>
+  </div>
+</div>

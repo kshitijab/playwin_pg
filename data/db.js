@@ -1,0 +1,5 @@
+(function() {
+
+    
+    AppNamespace.db = {};
+})();

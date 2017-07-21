@@ -1,0 +1,11 @@
+<div data-options="dxView : { name: 'aboutUs', title: 'About Playwin' } ">
+	<div class="form" data-options="dxContent : { targetPlaceholder: 'content' },dxScrollView: { } ">
+		<!-- View content -->
+		<div data-bind="dxList: { dataSource: items, grouped: true ,autoPagingEnabled:false}">
+		    <div data-options="dxTemplate: { name: 'item' }">
+		        <div data-bind="text: $data.name , click:$parent.callAction.bind($data)"></div>
+		    </div>   
+		</div>
+       
+	</div>
+</div>

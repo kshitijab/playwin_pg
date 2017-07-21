@@ -1,0 +1,13 @@
+<div data-options="dxView : { name: 'winnersYearList' } ">
+    <div class="form" data-options="dxContent : { targetPlaceholder: 'content' } ">
+
+
+        <div data-bind="dxList:{dataSource: yearList(), grouped:false }">
+            <div data-options="dxTemplate : { name: 'item' }"	data-bind="attr: { id: 'year_'+$data  }, click:$parent.yearWinnersList.bind($data)">
+                <div class="shopupper"	data-bind="attr: { id: 'upper_'+$data }">
+                    <div class="year" data-bind="text:$data" style="font-size:80%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

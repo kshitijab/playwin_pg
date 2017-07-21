@@ -1,0 +1,47 @@
+<div data-options="dxView : { name: 'shopLocator' } ">
+    <div class="form" data-options="dxContent : { targetPlaceholder: 'content' } ">
+
+
+
+        <select id="states" data-bind="
+                options: states,
+                optionsText: function(item) {
+                return  item.name;
+                },
+                optionsValue:function(item) {
+                return  item.name;
+                },                   
+                optionsCaption: 'Choose a State...',
+                event: { change: changeState }"></select>
+
+        <select id="cities" data-bind="
+                options: cities,
+                optionsText: function(item) {
+                return  item;
+                },
+                optionsValue:function(item) {
+                return  item;
+                },                   
+                optionsCaption: 'Choose a City...',
+                event: { change: changeCity }"></select>
+
+        <div data-bind="dxButton: {text: 'Search'},click:shopDetails.bind()"></div>     
+        <div data-bind="dxList: { dataSource: shopData,  itemMargin:18,  bounceEnabled: 0, showScrollbar: 1}">
+            <div data-options="dxTemplate : { name: 'item' }"	data-bind="attr: { id: 'opt_'+$data.uuid ,class : 'shops '+Playwin.core.parseStr($data.State)+' '+Playwin.core.parseStr($data.City) }">
+                <div class="shopupper"	data-bind="attr: { id: 'upper_'+$data.uuid }" style="font-size:90%; width:95%; margin:0 10px; white-space: normal;">
+                    <section data-bind="attr: { id: 'shop_'+$data.uuid }">
+
+                        <div><b><span class="shopName" data-bind="text:$data.ShopName"></span></b></div>
+                        <div class="address" data-bind="text:$data.Address"></div>
+                        <div><span class="city" data-bind="text:$data.City"></span> - 
+                            <span class="postCode" data-bind="text:$data.Postcode"></span></div>
+                        <div class="state" data-bind="text:$data.State"></div>
+                        <div>Contact: <span class="contactName" data-bind="text:$data.ContactName"></span> - 
+                            <span class="contactNumber" data-bind="text:$data.ContactNumber"></span></div>
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

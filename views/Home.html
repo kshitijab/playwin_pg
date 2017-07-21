@@ -1,0 +1,61 @@
+<div data-options="dxView : { name: 'Home' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' }" >
+        <div data-bind="dxLoadPanel:{message: loadPanelMsg, visible: loadPanelVisible }"></div>
+        <div class="home-splash">
+            <div data-options="dxScrollView: { }">
+                <div class="home-demo-logo">
+                </div>
+                <div class="contentHome" >
+                        <div class="centerbox-inner">
+                            <div style="text-align:center">
+                                <div  class="dx-button2 homeButton" data-bind="click:navigate.bind($data,'LottoGames')">
+                                    <img src="content/images/game.png" />
+                                    <span class="dx-button-text">Play Lotto</span>
+                                </div>
+                                <div class="dx-button2 homeButton" data-bind="click:navigate.bind($data,'WeeklyGames')">
+                                    <img src="content/images/game-weekly.png" />
+                                    <span class="dx-button-text">Play Weekly</span>
+                                </div>
+                                <div class="dx-button2 homeButton" data-bind="click:navigate.bind($data,'Results')">
+                                    <img src="content/images/resultN.png" style="margin-bottom:10px"/>
+                                    <span class="dx-button-text">Results</span>
+                                </div>
+                                <div
+                                    class="dx-button2 homeButton" data-bind="click:navigate.bind($data,'TodaysJackpot')">
+                                    <img src="content/images/todayDraw.png" />
+                                    <span class="dx-button-text">Todays Draw</span>
+                                </div>
+                                <div class="dx-button2 homeButton" onclick="window.open('http://card.myplaywin.com/myplaywin/jsp/Login.jsp?displaymode=PLY', '_blank', 'location=no', 'toolbar=yes'); return false">
+                                    <img src="content/images/card-status-icon.png" />
+                                    <span class="dx-button-text">Card Status</span>
+                                </div>
+                                <!-- 
+                                <div class="dx-button2 homeButton" data-bind="click:navigate.bind($data,'settings')">
+                                    <img src="content/images/friend.png" />
+                                    <span class="dx-button-text">MyPlaywin Cards </span>
+                                </div>
+                                -->
+                                <div class="dx-button2 homeButton" onclick="window.open('https://www.myplaywin.com/ordermycard.aspx', '_blank', 'location=no', 'toolbar=yes'); return false">
+                                    <img src="content/images/friend.png" />
+                                    <span class="dx-button-text">Order a Card</span>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="adSpaceHome"><a data-bind="click:openBannerRUrl.bind($data,bannerImgRUrl())"><img data-bind="attr:{src:bannerImgUrl}"></a></div>
+                <div style="margin:0 auto; text-align: center;">
+                <b style="margin-bottom: 10px;display: inline-block;border-bottom: 1px solid black;font-size: 15px;text-transform: uppercase;">Connect with us On Social Media</b>
+                <div style="margin:0 auto; text-align: center;">
+                    <div class="youTube" onclick="navigator.app.loadUrl('https://www.youtube.com/playwinlotto', { openExternal:true }); return false"></div>
+                    <div class="twitter" onclick="navigator.app.loadUrl('https://twitter.com/playwinlotto', { openExternal:true }); return false"></div>
+                    <div class="facebook" onclick="navigator.app.loadUrl('https://www.facebook.com/playwin', { openExternal:true }); return false"></div>
+                    <!-- <div class="blogger" onclick="navigator.app.loadUrl('http://hopevsmoney.blogspot.com', { openExternal:true }); return false"></div> -->
+                    <div class="insta" onclick="navigator.app.loadUrl('https://www.instagram.com/playwinlotto', { openExternal:true }); return false"></div>
+                </div>
+                                <!-- <label class="dx-button-text">Social Links</label> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

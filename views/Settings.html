@@ -1,0 +1,13 @@
+<div data-options="dxView : { name: 'settings' } ">
+	<div class="form" data-options="dxContent : { targetPlaceholder: 'content' } ">
+		<!-- View content -->
+		<div data-bind="dxList: { dataSource: items, grouped: true ,autoPagingEnabled:false}">
+
+		    <div data-options="dxTemplate: { name: 'item' }">
+		        <div data-bind="text: $data.name!= 'Notifications ' ? $data.name : ((window.localStorage.getItem('notifications') == null || window.localStorage.getItem('notifications') == 'true') ? 'Turn Off Notifications' : 'Turn On Notifications'), click:$parent.callAction.bind($data)"></div>
+		    </div>
+		</div>
+		<label>Click for notifications closing</label>
+
+	</div>
+</div>

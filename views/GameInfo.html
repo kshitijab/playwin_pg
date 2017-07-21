@@ -1,0 +1,502 @@
+    <div data-options="dxView : { name: 'gameInfo'} ">
+        <div class="form"	data-options="dxContent : { targetPlaceholder: 'content' } ,dxScrollView: { }">
+            <!-- <div id="tabs" data-bind="dxTabs: { items: tabs, selectedIndex: selectedTab ,itemClickAction: tabClicked}"></div> -->
+            <div class="aboutGame" style="text-align: center;"><img width="60%" border="1"	data-bind="attr: {  src: imageUrl}"></div>
+
+
+            <div data-bind="if: isGame1 " id="game1">
+            <br>
+                <div class="aboutGame">
+                    <h2>About Playwin Thursday Super Lotto</h2>
+                    <ul>
+
+                        <li>Starting Jackpot Rs. 2 crores.</li>
+                        <li>Ticket MRP - Rs. 10/-</li>
+                        <li>Draw every Thursday, telecast - available on Zee 24 Taas between 10.00 - 10.40 p.m.</li>
+                    </ul>
+                    <br/>
+                    <h2>Draw Details</h2>
+                    <ul>
+                        <li>6 numbers between 01 and 49 shall be drawn</li>
+                        <li>If all the 6 numbers on your ticket match the 6 numbers drawn, in any order, you will win or share the jackpot prize. Prizes are also paid on matching 3,4, OR 5 numbers out of the 6 numbers drawn.</li>
+                        <li>If no player wins the Jackpot, the entire Jackpot amount rollsover to the next week.</li>
+                        <li>Advance draw facility available</li>
+                    </ul>
+                </div>
+                    <br/>
+                <div class="prizeStructure" style="display:inline-block; margin: 10px auto; width: 98%;">
+                    <h2>Prize Structure</h2>
+                    <table cellspacing="1" cellpadding="3">
+                        <tbody>
+                            <tr>
+                                <th>Match Nos.</th>
+                                <th>Prize (Rs)</th>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>2 Crore *</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>50000 #</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>500 </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>50</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <div>* Min Assured & Pari Mutuel, # Pari Mutuel.</div>
+                </div>
+            </div>
+
+
+            <div data-bind="if: isGame2 " id="game2">
+                <br>
+                <div class="aboutGame">
+                    <h2>About Playwin Thunderball</h2>
+                    <ul>
+                        <li>Starting Jackpot Rs. 1 crore.</li>
+                        <li>Ticket MRP - Rs. 10/-</li>
+                        <li>Draw every Tuesday, telecast available on Zee 24 Taas between 10.00 - 10.40 p.m.</li>
+                        <li>Advance draw facility available</li>
+                    </ul>
+                    <br/>
+
+                    <h2>Draw Details</h2>
+                    <ul>
+                        <li>5 nos between 01 and 42 and 1 number between 01 and 15 shall be drawn</li>
+                        <li>If all the 5 numbers  and the Thunderball number on your ticket match the numbers drawn, in any order, you will win or share the jackpot prize. If no player wins the Jackpot, the entire Jackpot amount rollsover to the next week.</li>
+                    </ul>
+                </div>
+                <br/>
+
+                <div class="prizeStructure" style="display:inline-block; margin: 10px auto; width: 98%;">
+
+                    <h2>Prize Structure</h2>
+                    <table cellspacing="1" cellpadding="3">
+                        <tbody>
+                            <tr>
+                                <th>Match Nos.</th>
+                                <th>Prize (Rs)</th>
+                            </tr>
+                            <tr>
+                                <td>5,TB</td>
+                                <td>1 Crore *</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>40,000 #</td>
+                            </tr>
+                            <tr>
+                                <td>4,TB</td>
+                                <td>25,000</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>2,500</td>
+                            </tr>
+                            <tr>
+                                <td>3,TB</td>
+                                <td>1000</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>2,TB</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>1,TB</td>
+                                <td>20 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>* Min Assured & Pari Mutuel, # Pari Mutuel.</div>
+                </div>
+            </div>
+
+
+            <div data-bind="if: isGame3 " id="game3">
+            <br>
+                <div class="aboutGame">
+                <h2>About Fast Digit Lottery</h2>
+                    <ul>
+                        <li>Starting Jackpot Rs. 2Lacs per draw </li>
+                        <li>Price of Ticket Rs. 10/-</li>
+                        <li>Select 10 Digits (From 01 to 31, match all and win the jackpot.)</li>
+                        <li>1st Prize will be given on matching all the ten digits </li>
+                        <li>2nd Prize will be given on matching Eight Digits</li>
+                        <li>3rd Prize will be given on matching Six Digits</li>
+                        <li>4th Prize will be given on matching Four Digits</li>
+                        <li>Draw Frequency: Monday - Sunday @ 9:30pm</li>
+                        <li>Advance draw facility available</li>
+                    </ul>
+                </div>
+                    <br/>
+                <div class="prizeStructure" style="display:inline-block; margin: 10px auto; width: 98%;">
+
+                    <h2>Prize Structure</h2>
+                    <span class="blue_text00">Winning Level :</span>
+                    <table cellspacing="1" cellpadding="3">
+                        <tbody>
+                            <tr>
+                                <th>Prize Level</th>
+                                <th>Prize (Rs)</th>
+                            </tr>
+                            <tr>
+                                <td>1st Prize </td>
+                                <td>200,000 * </td>
+                            </tr>
+                            <tr>
+                                <td>2nd Prize</td>
+                                <td>1135 # </td>
+                            </tr>
+                            <tr>
+                                <td>3rd Prize</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>4th Prize</td>
+                                <td>20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    * Min Assured & Pari Mutuel, # Pari Mutuel.<br>
+                    # The above prize amounts will vary depending on draw timing and draw date.
+                </div>
+            </div>
+
+
+
+
+            <div data-bind="if: isGame4 " id="game4">
+            <br>
+                <div class="aboutGame">
+                    <h2>About Playwin Saturday Super Lotto</h2>
+                    <ul>
+                        <li>Starting Jackpot Rs. 2 crores.</li>
+                        <li>Ticket MRP - Rs. 10/-</li>
+                        <li>Draw every Saturday, telecast available on Zee 24 Taas between 10.00 - 10.40 p.m.</li>
+                        <li>Advance draw facility available</li>
+                    </ul>
+                    <br/>
+
+                    <h2>Draw Details</h2>
+                    <ul>
+                        <li>6 numbers between 01 and 49 shall be drawn</li>
+                        <li>If all the 6 numbers on your ticket match the 6 numbers drawn, in any order, you will win or share the jackpot prize. Prizes are also paid on matching 3,4, OR 5 numbers out of the 6 numbers drawn.</li>
+                        <li>If no player wins the Jackpot, the entire Jackpot amount rollsover to the next week.</li>
+                    </ul>
+                </div>
+                    <br/>
+
+                <div class="prizeStructure" style="display:inline-block; margin: 10px auto; width: 98%;">
+
+                    <h2>Prize Structure</h2>
+                    <table cellspacing="1" cellpadding="3">
+                        <tbody>
+                            <tr>
+                                <th>Match Nos.</th>
+                                <th>Prize (Rs)</th>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>2 Crores * </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>50,000 #</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>500</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>50 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div>* Min Assured & Pari Mutuel, # Pari Mutuel.</div>
+                </div>
+            </div>
+
+
+
+            <div data-bind="if: isGame5 " id="game5">
+            <br>
+                <div class="aboutGame">
+                <h2> About Playwin Jaldi 5 Lotto </h2>
+                    <ul>
+                        <li>Jackpot Rs. 5 lacs</li>
+                        <li>Ticket MRP - Rs. 10/-</li>
+                        <li>Draw every Friday, telecast available on Zee 24 Taas between 10.00 - 10.40 p.m.</li>
+                        <li>Advance draw facility available</li>
+                    </ul>
+                    <br/>
+
+                    <!-- <span class="blue_text00">DRAW  DETAILS</span> -->
+                    <h2>Draw  Details</h2>
+                    <ul style="line-height:25px">
+                        <li>5 numbers between 01 and 36 shall be drawn</li>
+                        <li>If a player matches his 5 numbers with the 5 numbers drawn, he will win the Jackpot</li>
+                        <li>If no player wins the Jackpot, the entire Jackpot Collection or Rs. 1 lac whichever is higher will be rolled down to Match 4 winners.</li>
+                        <li>The maximum winning after Roll-Down, per winner of Match 4, shall be restricted to Rs 10,000</li>
+                        <li>Any Balance left in Jackpot Roll down to Match 4 winners, shall be rolled down to Match 3 winners</li>
+                    </ul>
+                </div>
+                <br/>
+                <div class="prizeStructure" style="display:inline-block; margin: 10px auto; width: 98%;">
+
+                    <h2>Prize Structure</h2>
+                    <table cellspacing="1" cellpadding="3">
+                        <tbody>
+                            <tr>
+                                <th>Match Nos.</th>
+                                <th>Prize (Rs)</th>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>5 Lacs *</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>5000</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    * Pari Mutuel
+                </div>
+            </div>
+
+            <div data-bind="if: isGame9 " id="game9">
+            <br>
+                <div class="aboutGame">
+                <h2> About Playwin Keno </h2>
+                    <ul>
+                        <li>Jackpot Rs. 21 Lacs.</li>
+                        <li>Ticket MRP - Rs. 10/-</li>
+                        <li>Draw Frequency: Monday - Sunday</li>
+                    </ul>
+                    <br/>
+                    <!-- <span class="blue_text00">Draw Details</span> -->
+                    <h2>Draw Details</h2>
+                    <ul style="line-height:25px">
+                        <li>The Keno Game has a matrix of 80 numbers.</li>
+                        <li>On each draw date, there will be a random drawing of 20 numbers from a range of 1-80</li>
+                        <li>To participate in a Keno game, a player can select 2 up to 10 numbers from a range of 1-80.Each such set is called a "SPOT"</li>
+                        <li>There are 9 spots available for play to the customer, ranging from Spot 2 to Spot 10.</li>
+                        <li>You have the option to play multiple games for each spot selected, i.e. 1/2/5 or 10 games. Each KENO Game is priced at Rs.10.</li>
+                        <li>If all the numbers in your chosen spot match the numbers drawn for the day in any order, you win the prize as per the pre-announced prize structure.</li>
+                    </ul>
+                    <br/>
+                    <!-- <span class="blue_text00">Allocation of Prize Money</span> -->
+                    <h2>Allocation of Prize Money</h2>
+                    <ul>
+                        <li>The State determines a prize structure for each game, the text of which may be obtained from the Sikkim State lottery office and at points of sale as well. The amount of each prize as a result of the draw is calculated in accordance with the prize structure as determined by the Government of Sikkim</li>
+                        <li>The maximum prize liability on a single draw will be restricted to Rs.60 Lakhs on Match 10/10, 9/9 and 8/8. In case the total prize payout for each of the above prize levels exceeds Rs.60 Lakhs, the amount of Rs.60 Lakhs will be distributed equally amongst the winners in that category.</li>
+                    </ul>
+                </div>
+                <br/>
+                <div class="prizeStructure" style="display:inline-block;margin: 10px auto;width: 98%;">
+
+                    <h2>Prize Structure</h2>
+                    <table cellspacing="1" cellpadding="0">
+                        <tbody>
+                            <tr valign="center" align="center">
+                                <td width="10%" height="22"></td>
+                                <td width="10%" height="22">2</td>
+                                <td width="10%" height="22">3</td>
+                                <td width="10%" height="22">4</td>
+                                <td width="10%" height="22">5</td>
+                                <td width="10%" height="22">6</td>
+                                <td width="10%" height="22">7</td>
+                                <td width="10%" height="22">8</td>
+                                <td width="10%" height="22">9</td>
+                                <td width="10%" height="22">10</td>
+                            </tr>
+                            <tr valign="center" align="center">
+                                <td height="22">2</td>
+                                <td height="22">140</td>
+                                <td height="22">40</td>
+                                <td height="22">20</td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                            </tr>
+                            <tr valign="center" align="center">
+                                <td height="22">3</td>
+                                <td height="22"></td>
+                                <td height="22">200</td>
+                                <td height="22">50</td>
+                                <td height="22">30</td>
+                                <td height="22">20</td>
+                                <td height="22">20</td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                            </tr>
+                            <tr valign="center" align="center">
+                                <td height="22">4</td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22">600</td>
+                                <td height="22">250</td>
+                                <td height="22">90</td>
+                                <td height="22">30</td>
+                                <td height="22">20</td>
+                                <td height="22">20</td>
+                                <td height="22">10</td>
+                            </tr>
+                            <tr valign="center" align="center">
+                                <td height="22">5</td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22">4500</td>
+                                <td height="22">800</td>
+                                <td height="22">150</td>
+                                <td height="22">100</td>
+                                <td height="22">50</td>
+                                <td height="22">30</td>
+                            </tr>
+                            <tr valign="center" align="center">
+                                <td height="22">6</td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22">5000</td>
+                                <td height="22">1300</td>
+                                <td height="22">1000</td>
+                                <td height="22">250</td>
+                                <td height="22">120</td>
+                            </tr>
+                            <tr valign="center" align="center">
+                                <td height="22">7</td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22">40,000</td>
+                                <td height="22">4965*</td>
+                                <td height="22">1,100</td>
+                                <td height="22">1,000</td>
+                            </tr>
+                            <tr valign="center" align="center">
+                                <td height="22">8</td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22">3.5lacs*</td>
+                                <td height="22">55,000</td>
+                                <td height="22">10,000</td>
+                            </tr>
+                            <tr valign="center" align="center">
+                                <td height="22">9</td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22">7.5lacs*</td>
+                                <td height="22">80,000</td>
+                            </tr>
+                            <tr valign="center" align="center">
+                                <td height="22">10</td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22"></td>
+                                <td height="22">21lacs*</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+            <div data-bind="if: isGame11 " id="game11" class="blue_text">
+            <br>
+                <div class="aboutGame">
+                <h2> About Playwin Jaldi 5 Double Lotto </h2>
+                    <ul>
+                        <li>Draw every Wednesday, telecast available on Zee 24 Taas between 10.00 - 10.40 p.m.</li>
+                        <li>Jackpot Rs. 10 lacs.</li>
+                        <li>Ticket MRP - Rs. 20/-</li>
+                        <li>Advance draw facility available</li>
+                    </ul>
+                    <br/>
+                    <!-- <span class="blue_text00">DRAW  DETAILS</span> -->
+                    <h2>Draw Details</h2>
+                    <ul style="line-height:25px">
+                        <li>5 numbers between 01 and 36 shall be drawn</li>
+                        <li>If a player matches his 5 numbers with the 5 numbers drawn, he will win the Jackpot</li>
+                        <li>If no player wins the Jackpot, the entire Jackpot Collection or Rs. 2 lacs whichever is higher will be rolled down to Match 4 winners</li>
+                        <li>The maximum winning after Roll-Down, per winner of Match 4, shall be restricted to Rs 10,000</li>
+                        <li>Any Balance left in Jackpot Roll down to Match 4 winners, shall be rolled down to Match 3 winners</li>
+                    </ul>
+                </div>
+                <br/>
+                <div class="prizeStructure" style="display:inline-block; margin:10px auto;width: 98%;">
+
+                    <h2>Prize Structure</h2>
+                    <table cellspacing="1" cellpadding="3">
+                        <tbody>
+                            <tr>
+                                <th>Match Nos.</th>
+                                <th>Prize (Rs)</th>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>10 Lacs *</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>7500</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    * Pari Mutuel
+                </div>
+            </div>
+        </div>
+    </div>

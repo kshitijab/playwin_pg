@@ -1,0 +1,31 @@
+<div data-options="dxView : { name: 'winners', title: 'Gallery' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " >
+    	<div data-bind="dxLoadPanel:{message: loadPanelMsg, visible: loadPanelVisible }"></div>
+    	<div class="gallery" data-bind="visible:!notAnyWinner(),dxGallery: { dataSource: dataSource, showNavButtons: true ,height:getHeight() }">
+            <div data-options="dxTemplate : { name: 'item' } " >
+              <div class="gallery-item winnerBg">
+                
+                
+                <div>
+                  <div> <img data-bind="attr: { src: $data.src }"> </div>
+                  <div class="name" data-bind="text:$data.name">JEREMIAS NEREU RODRIGUES</div>
+                </div>
+                <div>
+                  <div class="text" >
+<!--                     Winner      : <span data-bind="text:$parent.gameName()"></span><br /> -->
+                    Date        : <span data-bind="text:$data.Date"></span> </br>
+                    Game        : <span data-bind="text:$data.GameName"></span> </br>
+                    Prize       : <span data-bind="text:$data.Prize+' Rs.'"></span> <br />
+                    Winning No. : <span data-bind="text:$data.WinningNo"></span> <br />
+                    City        : <span data-bind="text:$data.City"></span>
+                   </div>
+                </div>
+                
+                
+              </div>
+            </div>
+        </div>
+        <div data-bind="visible:notAnyWinner()"> There are no jackpot winners. </div>
+
+	</div>
+</div>
