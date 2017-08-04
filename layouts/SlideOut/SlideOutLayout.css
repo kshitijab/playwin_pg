@@ -22,7 +22,8 @@
     top: 72px;
     bottom: 0;
     width: 100%;
-    overflow: hidden;
+    overflow: scroll;
+    margin-bottom: 10px;
 }
 
 .slideout-layout .layout-content > div[data-options] {

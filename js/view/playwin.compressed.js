@@ -742,7 +742,7 @@ Playwin.play = {
     calculateTotalBetAmount: function () {
         var a = 0;
         $(".ticket_amt").each(function () {
-            a = a + parseInt(this.value * 10)
+            a = a + parseInt(this.value * 13)
         });
         a = a * parseInt($("#no_draw").val() == "" ? 1 : $("#no_draw").val());
         $("#sum_amt").val(a);
