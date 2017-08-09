@@ -12,7 +12,7 @@
 	border:0;
 	outline:0;
 	background:transparent;
-	font-family:Calibri
+	font-family:Calibri !important;
 }
 html, body {
 	width:100%;
