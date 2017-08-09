@@ -1,10 +1,7 @@
 <div data-options="dxView : { name: 'playGame', title: 'Play Game' } ">
-    <div
-        data-options="dxContent : { targetPlaceholder: 'content' },dxScrollView: { }">
-        <div id="toast-error"
-             data-bind="dxToast: { message: 'Sample error message', type: 'error' }"></div>
-        <div id="toast-success"
-             data-bind="dxToast: { message: 'Sample success message', type: 'success' }"></div>
+    <div data-options="dxContent : { targetPlaceholder: 'content' },dxScrollView: { }">
+        <div id="toast-error" data-bind="dxToast: { message: 'Sample error message', type: 'error' }"></div>
+        <div id="toast-success" data-bind="dxToast: { message: 'Sample success message', type: 'success' }"></div>
         <!--         <h1 data-bind="text: message"></h1> -->
         <!-- <div class="aboutGame" style="text-align: center;"><img width="60%" border="1"  data-bind="attr: {  src: imageUrl}"></div> -->
 
@@ -14,16 +11,16 @@
 
 
         <!--  Start Changed -->
-        <div id="popup" data-bind="dxPopup: { visible:isShowNoOfResultList , fullScreen:false , height:340 } " >
+        <div id="popup" data-bind="dxPopup: { visible:isShowNoOfResultList , fullScreen:false , height:340 } ">
             <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
                 <div class="title-button" data-bind="dxButton: { icon: 'close', clickAction:hideNoOfResultList }"></div>
                 <h2 data-bind="text:resultTitle()+' Results'"></h2>
             </div>
             <div data-options="dxTemplate : { name: 'content' } ">
                 <div class="popup-content">
-                    <div  data-bind="dxList:{dataSource: noOfResultList, grouped:false }">
+                    <div data-bind="dxList:{dataSource: noOfResultList, grouped:false }">
                         <div data-options="dxTemplate : { name: 'item' }" data-bind="attr: { id: 'noResult_'+Playwin.play.jsonDetails.currJackpot.id  }, click:$parent.showOverLayResults.bind($data,Playwin.play.jsonDetails.currJackpot.id)">
-                            <div class="shopupper"	data-bind="attr: { id: 'upper_'+Playwin.play.jsonDetails.currJackpot.id }">
+                            <div class="shopupper" data-bind="attr: { id: 'upper_'+Playwin.play.jsonDetails.currJackpot.id }">
                                 <div class="year" data-bind="text:$data.caption" style="font-size:80%"></div>
                             </div>
                         </div>
@@ -36,7 +33,7 @@
                 <div class="title-button" data-bind="dxButton: { icon: 'close', clickAction:hidePopup }"></div>
                 <h2 data-bind="text:resultTitle()+' Results'"></h2>
             </div>
-            <div data-options="dxTemplate : { name: 'content' }" >
+            <div data-options="dxTemplate : { name: 'content' }">
                 <div class="popup-content">
 
                     <div class="adSpaceHome"><a data-bind="click:openBannerRUrl.bind($data,bannerImgRUrl())"><img data-bind="attr:{src:bannerImgUrl}"></a></div>
@@ -45,8 +42,8 @@
                     <div data-bind="dxList:{dataSource: overLayResults, grouped:false },attr:{'style':'height:'+($(window).height()-175)+'px'}">
                         <div data-options="dxTemplate : { name: 'item' }">
                             <div data-bind="text:$data.DrawDate" style="font-size:90%"></div>
-                            <div style="font-size:90%">Draw Id: <span style="font-size:90%" data-bind="text:$data.DrawID" ></span></div>
-                            <div  style="font-size:90%"><span data-bind="html:$data.ResultHtml"></span></div>
+                            <div style="font-size:90%">Draw Id: <span style="font-size:90%" data-bind="text:$data.DrawID"></span></div>
+                            <div style="font-size:90%"><span data-bind="html:$data.ResultHtml"></span></div>
                         </div>
                     </div>
 
@@ -99,29 +96,35 @@
 
 
         <div>
-            <div class="play_game_img" style="text-align: center;"><img width="60%" border="1"  data-bind="attr: { title: $data.name, src: 'content/images/'+Playwin.play.jsonDetails.currJackpot.id+'.png'}"/></div>
+            <div class="play_game_img" style="text-align: center;"><img width="60%" border="1" data-bind="attr: { title: $data.name, src: 'content/images/'+Playwin.play.jsonDetails.currJackpot.id+'.png'}"
+                /></div>
             <div class="Tab">
                 <ul>
-                    <li><div id="tab1" class="sel" data-bind="click:tabClick.bind($data,'draws')">Single Draw</div></li>
-                    <li><div id="tab2" data-bind="click:tabClick.bind($data,'no_draws')">Multiple Draw</div></li>
+                    <li>
+                        <div id="tab1" class="sel" data-bind="click:tabClick.bind($data,'draws')">Single Draw</div>
+                    </li>
+                    <li>
+                        <div id="tab2" data-bind="click:tabClick.bind($data,'no_draws')">Multiple Draw</div>
+                    </li>
                 </ul>
             </div>
 
 
 
-            <div style="clear:both; padding-top:2px"><!-- data-bind="ifnot: isKenoGame" -->
+            <div style="clear:both; padding-top:2px">
+                <!-- data-bind="ifnot: isKenoGame" -->
                 <div id="div1" data-bind="visible:notTabVisible">
-                    <div class="stepSide" >
+                    <div class="stepSide">
                         <div class="stepNo">1.</div>
                         <div class="stepTitle">Select No. of Draws</div>
                     </div>
 
                     <!--             <select id="no_draw" data-bind="options: noOfDraw"></select>  -->
                     <div class="borderBox">
-                        <div  class="butDraw" data-bind="click:noDrawChange.bind($data,'down')">
+                        <div class="butDraw" data-bind="click:noDrawChange.bind($data,'down')">
                             <span style="font-size: 20">-</span>
                         </div>
-                        <input class="borderBoxInput" id='no_draw' type='number' value='1' disabled="disabled"/>
+                        <input class="borderBoxInput" id='no_draw' type='number' value='1' disabled="disabled" />
                         <div class="butDraw " data-bind="click:noDrawChange.bind($data,'up')">
                             <span style="font-size: 20">+</span>
                         </div>
@@ -136,7 +139,7 @@
                 </div>
 
                 <div id="div2" data-bind="visible:tabVisible">
-                    <div class="stepSide" >
+                    <div class="stepSide">
                         <div class="stepNo">1.</div>
                         <div class="stepTitle">Select Advance Draw</div>
                     </div>
@@ -159,17 +162,20 @@
                         <label><input type="radio" value="Beta" data-bind="checked: radioSelectedOptionValue" />Beta</label>
                         <label><input type="radio" value="Gamma" data-bind="checked: radioSelectedOptionValue" />Gamma</label> -->
 
-                                <!-- <div>
+                        <!-- <div>
                                     <div data-bind="foreach: availableDraws">
                                         <input id="draw_options" name="items" type="radio" value="$data.DrawID+'_'+$data.DrawTime+'_'+$data.did" /> -->
-                                        <!-- <span data-bind="text: ko.toJSON($data)"></span> -->    <!--data-bind="checked: radioSelectedOptionValue"  data-bind="checked: drawChange" -->
-                                        <!-- <span data-bind="text: Playwin.core.getFormatedDateTime($data.DrawTime)"></span> --> <!-- working -->
-                                    <!-- <br/> -->
-                                    <!-- <div data-bind="text: ko.toJSON($data)"></div> -->
-                                    <!-- </div> --><!-- <div data-bind="text: ko.toJSON(availableDraws)"></div>-->
-                                <!-- </div> -->
+                        <!-- <span data-bind="text: ko.toJSON($data)"></span> -->
+                        <!--data-bind="checked: radioSelectedOptionValue"  data-bind="checked: drawChange" -->
+                        <!-- <span data-bind="text: Playwin.core.getFormatedDateTime($data.DrawTime)"></span> -->
+                        <!-- working -->
+                        <!-- <br/> -->
+                        <!-- <div data-bind="text: ko.toJSON($data)"></div> -->
+                        <!-- </div> -->
+                        <!-- <div data-bind="text: ko.toJSON(availableDraws)"></div>-->
+                        <!-- </div> -->
 
-<!-- <label><input type="radio" value="Alpha" data-bind="checked: radioSelectedOptionValue" />Alpha</label>
+                        <!-- <label><input type="radio" value="Alpha" data-bind="checked: radioSelectedOptionValue" />Alpha</label>
             <label><input type="radio" value="Beta" data-bind="checked: radioSelectedOptionValue" />Beta</label>
             <label><input type="radio" value="Gamma" data-bind="checked: radioSelectedOptionValue" />Gamma</label> -->
 
@@ -197,17 +203,15 @@
             <div data-bind="if: isKenoGame">
 
                 <!-- For prize structure overlay -->
-                <div id="prizeStructureOverlay"
-                     data-bind="dxOverlay:{visible:overlayPzSVisible},dxScrollView: { }">
+                <div id="prizeStructureOverlay" data-bind="dxOverlay:{visible:overlayPzSVisible},dxScrollView: { }">
                     <!-- 			<p data-bind="text:overLayP"></p> -->
                     <h1 data-bind="text:'Prize Structure'"></h1>
-                    <div class="button"
-                         data-bind="dxButton:{text: 'X', clickAction: hidePrizeStructure}"></div>
+                    <div class="button" data-bind="dxButton:{text: 'X', clickAction: hidePrizeStructure}"></div>
                     <div id="prize_amt_div">
                         <table>
                             <thead>
-                            <td>Match</td>
-                            <td>Prize</td>
+                                <td>Match</td>
+                                <td>Prize</td>
                             </thead>
                             <tbody id='prize_structure' data-bind="foreach:prizeStructure">
                                 <tr>
@@ -234,15 +238,21 @@
                             <b>Bet Amount</b>
                         </div>
                     </div>
-                    <div  style="clear:both; padding-left:22px">
+                    <div style="clear:both; padding-left:22px">
                         <div style="float:left; width: 150px">
                             <div class="borderBox">
-                                <div  class="butDraw " data-bind="click:spotChange.bind($data,'down')"><span style="font-size: 20">-</span></div><input id='spot_option' class="borderBoxInput"  value='1' disabled="disabled"><div class="butDraw " data-bind="click:spotChange.bind($data,'up')"><span style="font-size: 20">+</span></div></div>
+                                <div class="butDraw " data-bind="click:spotChange.bind($data,'down')"><span style="font-size: 20">-</span></div><input id='spot_option' class="borderBoxInput"
+                                    value='1' disabled="disabled">
+                                <div class="butDraw " data-bind="click:spotChange.bind($data,'up')"><span style="font-size: 20">+</span></div>
+                            </div>
                         </div>
                         <div style="float:left">
                             <div class="borderBox">
-                                <div  class="butDraw" data-bind="click:amtChange.bind($data,'down')"><span style="font-size: 20">-</span></div><input class="borderBoxInput" id='amt_option_caption'  value='13' disabled="disabled"/>
-                                <input id='amt_option' type="hidden" value='1'/><div class="butDraw" data-bind="click:amtChange.bind($data,'up')"><span style="font-size: 20">+</span></div></div>
+                                <div class="butDraw" data-bind="click:amtChange.bind($data,'down')"><span style="font-size: 20">-</span></div><input class="borderBoxInput" id='amt_option_caption'
+                                    value='13' disabled="disabled" />
+                                <input id='amt_option' type="hidden" value='1' />
+                                <div class="butDraw" data-bind="click:amtChange.bind($data,'up')"><span style="font-size: 20">+</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -295,10 +305,10 @@
                         class="gameBallsUl">
                         <span data-bind="text: value" class="playBallBig">&nbsp;</span>
                     </div> -->
-                    <div
-                        data-bind="foreach: { data: gameBalls ,as : 'value'} , click:  function(data, event) { setRowLP(1,'',data, event) }"
+                    <div data-bind="foreach: { data: gameBalls ,as : 'value'} , click:  function(data, event) { setRowLP(1,'',data, event) }"
                         class="gameBallsUl">
-                        <span data-bind="text: ((Playwin.play.jsonDetails.currJackpot.id == 2 && $index() === 5 && value == '00') ? 'TB' : value)" class="playBallBig">&nbsp;
+                        <span data-bind="text: ((Playwin.play.jsonDetails.currJackpot.id == 2 && $index() === 5 && value == '00') ? 'TB' : value)"
+                            class="playBallBig">&nbsp;
                     </div>
                 </div>
 
