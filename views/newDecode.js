@@ -466,53 +466,53 @@ AppNamespace[_0x495a[108]] = function(_0x6c34xd) {
             return _0x6c34x1a;
         },
         playGameBtn: function(_0x6c34x11) {
-        var onSuccess = function(position) {
-            console.log(position);
-            latitude =  position.coords.latitude; // '23.022505';
-            longitude =  position.coords.longitude; // '72.5713621';
-            $.ajax({
-                type: 'GET',
-                url: 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+latitude+','+longitude+'&sensor=true',
-                success: function(result)
-                {
-                    var add = eval(result);
-                    var address = add.results[0].formatted_address;
-                    var isPlayState = address.toLowerCase();
-                    console.log(isPlayState+', maha = '+isPlayState.indexOf('maharashtra')+', sikkim = '+isPlayState.indexOf('sikkim'));
-                    if(isPlayState.indexOf('maharashtra') == -1 && isPlayState.indexOf('sikkim') == -1 && isPlayState.indexOf('goa') == -1)
+            var onSuccess = function(position) {
+                console.log(position);
+                latitude =  position.coords.latitude; // '23.022505';
+                longitude =  position.coords.longitude; // '72.5713621';
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+latitude+','+longitude+'&sensor=true',
+                    success: function(result)
                     {
-                         DevExpress.ui.dialog.alert("You cannot play outside Sikkim or Maharashtra!","Error!");
-                    }
-                    else
+                        var add = eval(result);
+                        var address = add.results[0].formatted_address;
+                        var isPlayState = address.toLowerCase();
+                        console.log(isPlayState+', maha = '+isPlayState.indexOf('maharashtra')+', sikkim = '+isPlayState.indexOf('sikkim'));
+                        if(isPlayState.indexOf('maharashtra') == -1 && isPlayState.indexOf('sikkim') == -1 && isPlayState.indexOf('goa') == -1)
+                        {
+                            DevExpress.ui.dialog.alert("You cannot play outside Sikkim or Maharashtra!","Error!");
+                        }
+                        else
+                        {
+                            /*if(navigator.connection.type==0){
+                                DevExpress.ui.dialog.alert("No Internet connection.","Error!");
+                            }else if(navigator.connection.type=='none'){
+                                DevExpress.ui.dialog.alert('No Internet connection.',"Error!");
+                            }else{*/
+                                AppNamespace[_0x495a[20]][_0x495a[19]](_0x495a[163] + _0x6c34x11[_0x495a[142]]);
+                            //}
+                        }
+                    },
+                    error: function(e)
                     {
-                        /*if(navigator.connection.type==0){
-                            DevExpress.ui.dialog.alert("No Internet connection.","Error!");
-                        }else if(navigator.connection.type=='none'){
-                            DevExpress.ui.dialog.alert('No Internet connection.',"Error!");
-                        }else{*/
-                            AppNamespace[_0x495a[20]][_0x495a[19]](_0x495a[163] + _0x6c34x11[_0x495a[142]]);
-                        //}
+                        console.log(e.responseText);
                     }
-                },
-                error: function(e)
-                {
-                    console.log(e.responseText);
-                }
-            });
-        };
+                });
+            };
 
-        // onError Callback receives a PositionError object
-        //
-        function onError(error) {
-            console.log('code: '    + error.code    + '\n' +
-                'message: ' + error.message + '\n');
-            DevExpress.ui.dialog.alert("Please enable location service to play!","Error!");
-        }
-        function alertDismissed()
-        {
-            
-        }
-        navigator.geolocation.getCurrentPosition(onSuccess, onError, {timeout: 10000, enableHighAccuracy: true});
+            // onError Callback receives a PositionError object
+            //
+            function onError(error) {
+                console.log('code: '    + error.code    + '\n' +
+                    'message: ' + error.message + '\n');
+                DevExpress.ui.dialog.alert("Please enable location service to play!","Error!");
+            }
+            function alertDismissed()
+            {
+                
+            }
+            navigator.geolocation.getCurrentPosition(onSuccess, onError, {timeout: 10000, enableHighAccuracy: true});
           
         },
         gameInfoBtn: function(_0x6c34x11) {
@@ -1419,6 +1419,7 @@ AppNamespace[_0x495a[391]] = function(_0x6c34x2) {
             window[_0x495a[16]](_0x6c34x3, _0x495a[15]);
         },
         tickets: Playwin[_0x495a[171]][_0x495a[397]]
+        
     };
     return _0x6c34x1;
 };
