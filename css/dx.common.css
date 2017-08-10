@@ -12,7 +12,7 @@
 	border:0;
 	outline:0;
 	background:transparent;
-	font-family:Calibri !important;
+	font-family: 'Roboto', 'Droid Sans', Arial, sans-serif !important;
 }
 html, body {
 	width:100%;
@@ -1681,12 +1681,13 @@ input.lottotbox {
 	cursor:pointer
 }
 .butDraw {
-	float:left;
-	width:35px;
-	height:25px;
-	cursor:pointer;
-	font-size:1.3em;
-	font-weight:bold
+	float: left;
+width: 30px;
+height: 30px;
+cursor: pointer;
+font-size: 1.3em;
+font-weight: bold;
+padding-top: 4px
 }
 .borderBox .plus {
 
@@ -1698,16 +1699,16 @@ input.lottotbox {
 
 }
 .borderBoxInput {
-	float:left;
-	width:30px;
-	border:medium none;
-	height:24px;
-	font-size:85%;
-	text-align:center;
-	background:0;
-	border-left:2px solid #de7319;
-	border-right:2px solid #de7319;
-	font-weight:bold
+	float: left;
+width: 30px;
+border: medium none;
+height: 20px;
+font-size: 85%;
+text-align: center;
+background: 0;
+border-left: 2px solid #de7319;
+border-right: 2px solid #de7319;
+font-weight: bold
 }
 .borderBox {
 	border:1px solid #de7319;
