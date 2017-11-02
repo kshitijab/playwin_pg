@@ -121,25 +121,7 @@ AppNamespace.settings=function(){
               }
 
               window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);*/
-                function onSuccess(data){
-                  console.log(JSON.stringify(data));
-                }
-                function onError(err){
-                  console.log("error "+JSON.stringify(err));
-                }
-
-              try {
-                cordova.plugins.email.open({
-                    to:      'help@playwin.esselgroup.com',
-                    subject: 'App Query',
-                    body:    null
-                });
-            } catch (e) {
-                window.plugins.email.open({
-                    to:      'help@playwin.esselgroup.com',
-                    subject: 'App Query',
-                    body:    null
-                });
+              window.location.href = "mailto:help@playwin.esselgroup.com?subject=App Query";
             } 
             }else{
                 AppNamespace.app.navigate(a.url);
