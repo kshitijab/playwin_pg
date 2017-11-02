@@ -122,7 +122,7 @@ AppNamespace.settings=function(){
 
               window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);*/
               window.location.href = "mailto:help@playwin.esselgroup.com?subject=App Query";
-            } 
+            
             }else{
                 AppNamespace.app.navigate(a.url);
             }
