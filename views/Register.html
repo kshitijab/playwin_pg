@@ -1,101 +1,98 @@
 <div data-options="dxView : { name: 'registerUser', title: 'Playwin Registration' ,layout: 'empty' } ">
-	<div class="form"
-	data-options="dxContent : { targetPlaceholder: 'content' } ">
-	<div
-	data-bind="dxLoadPanel:{message: loadPanelMsg, visible: loadPanelVisible }"></div>
-	<div id="registerDiv" class="home-splash">
-		<div data-options="dxScrollView: { }">
-		<div>
-			<div class="home-demo-logo"></div>
-			<div class="home-dx-logo"></div>
-		</div>
-		<div class="dx-fieldset">
-		<div class="dx-field">
-			<div class="dx-field-value">
-				<div
-				data-bind="dxTextBox: { placeholder: 'Your Name*' , value: name , valueUpdate: 'afterkeydown' }"></div>
-			</div>
-		</div>
+    <div class="form" data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div data-bind="dxLoadPanel:{message: loadPanelMsg, visible: loadPanelVisible }"></div>
+        <div id="registerDiv" class="home-splash">
+            <div data-options="dxScrollView: { }">
+                <div>
+                    <div class="home-demo-logo"></div>
+                    <div class="home-dx-logo"></div>
+                </div>
+                <div class="dx-fieldset">
+                    <div class="dx-field">
+                        <div class="dx-field-value">
+                            <div data-bind="dxTextBox: { placeholder: 'Your Name*' , value: name , valueUpdate: 'afterkeydown' }"></div>
+                        </div>
+                    </div>
 
-		<div class="dx-field">
-			<div class="dx-field-value">
-				<div class="dx-editbox dx-widget dx-feedback dx-textbox">
-					<input id="number" class="dx-editbox-input" type="tel"
-					data-bind="value: mobile" placeholder="Mobile Number*"/>
-					<div class="dx-editbox-border"></div>
-				</div>
-			</div>
-		</div>
+                    <div class="dx-field">
+                        <div class="dx-field-value">
+                            <div class="dx-editbox dx-widget dx-feedback dx-textbox">
+                                <input id="number" class="dx-editbox-input" type="tel" data-bind="value: mobile" placeholder="Mobile Number*" />
+                                <div class="dx-editbox-border"></div>
+                            </div>
+                        </div>
+                    </div>
 
 
-		<div class="dx-field">
-			<div class="dx-field-value">
-				<div data-bind="dxTextBox: {  placeholder: 'Email Id' , value: email , valueUpdate: 'afterkeydown'}"></div>
-			</div>
-		</div>
+                    <div class="dx-field">
+                        <div class="dx-field-value">
+                            <div data-bind="dxTextBox: {  placeholder: 'Email Id' , value: email , valueUpdate: 'afterkeydown'}"></div>
+                        </div>
+                    </div>
 
-		<div class="dx-field">
-			<div class="dx-field-value">
-				<div class="dx-editbox dx-widget dx-feedback dx-textbox">
-					<input placeholder="Date of Birth*" class="dx-editbox-input" type="text" onfocus="(this.type='date')"  id="dob"/> 
-					<div class="dx-editbox-border"></div>
-				</div>
-			</div>
-		</div>
-
-
-		<div class="dx-field">
-			<div class="dx-field-value">
-			<span>Select State</span>
-				<div class="dx-editbox dx-widget dx-feedback dx-textbox">
-					<!-- <input id="address" class="dx-editbox-input" placeholder="Address"/> -->
-					<select class="dx-editbox-input" id="address">
-						<option value="Maharashtra">Maharashtra</option>
-						<option value="Goa">Goa</option>
-						<option value="Sikkim">Sikkim</option>
-					</select>
-					<div class="dx-editbox-border"></div>
-				</div>
-			</div>
-		</div>
-
-		<div class="dx-field">
-			<div class="dx-field-value">
-				<div class="dx-editbox dx-widget dx-feedback dx-textbox checkbox-cont">
-					
-					<p>
-						<input type="checkbox" name="vehicle" id="news">
-						<label for="news">I subscribe for Promotions</label>
-					</p>
-					<p>
-						<input type="checkbox" name="vehicle" id="tc"/>
-						<label style="text-decoration: underline;" for="tc"><a style="color:black;cursor: pointer;text-decoration: underline;" onclick="navigator.app.loadUrl('https://www.myplaywin.com/MobileApp/pages/TandC_app.html', { openExternal:true }); return false">Terms &amp; Conditions</a></label>
-
-					</p>
-					<p>
-						<input type="checkbox" name="vehicle" id="above">
-						<label for="above">I’m 18 years &amp; above</label>
-					</p>
-					<p>
-						<input type="checkbox" name="vehicle" id="state">
-						<label for="state">I’m from online lottery playing state</label>
-					</p>
-
-				</div>
-			</div>
-		</div>
+                    <div class="dx-field">
+                        <div class="dx-field-value">
+                            <div class="dx-editbox dx-widget dx-feedback dx-textbox">
+                                <input placeholder="Date of Birth*" class="dx-editbox-input" type="text" onfocus="(this.type='date')" id="dob" />
+                                <div class="dx-editbox-border"></div>
+                            </div>
+                        </div>
+                    </div>
 
 
-		<div class="dx-field">
-			<div class="dx-field-value">
-				<div class="dx-button1" data-bind="click: registerSubmit" onclick="window.localStorage.setItem('MobileNumber', $.registerDiv.number.value);">
-					<span class="dx-button-text"> Continue </span>
-				</div>
+                    <div class="dx-field">
+                        <div class="dx-field-value">
+                            <span>Select State</span>
+                            <div class="dx-editbox dx-widget dx-feedback dx-textbox">
+                                <!-- <input id="address" class="dx-editbox-input" placeholder="Address"/> -->
+                                <select class="dx-editbox-input" id="address">
+									<option value="Maharashtra">Maharashtra</option>
+									<option value="Goa">Goa</option>
+									<option value="Sikkim">Sikkim</option>
+									<option value="Punjab">Punjab</option>
+								</select>
+                                <div class="dx-editbox-border"></div>
+                            </div>
+                        </div>
+                    </div>
 
-			</div>
-		</div>
-	</div>
-</div>
-</div>
-</div>
+                    <div class="dx-field">
+                        <div class="dx-field-value">
+                            <div class="dx-editbox dx-widget dx-feedback dx-textbox checkbox-cont">
+
+                                <p>
+                                    <input type="checkbox" name="vehicle" id="news">
+                                    <label for="news">I subscribe for Promotions</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" name="vehicle" id="tc" />
+                                    <label style="text-decoration: underline;" for="tc"><a style="color:black;cursor: pointer;text-decoration: underline;" onclick="navigator.app.loadUrl('https://www.myplaywin.com/MobileApp/pages/TandC_app.html', { openExternal:true }); return false">Terms &amp; Conditions</a></label>
+
+                                </p>
+                                <p>
+                                    <input type="checkbox" name="vehicle" id="above">
+                                    <label for="above">I’m 18 years &amp; above</label>
+                                </p>
+                                <p>
+                                    <input type="checkbox" name="vehicle" id="state">
+                                    <label for="state">I’m from online lottery playing state</label>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="dx-field">
+                        <div class="dx-field-value">
+                            <div class="dx-button1" data-bind="click: registerSubmit" onclick="window.localStorage.setItem('MobileNumber', $.registerDiv.number.value);">
+                                <span class="dx-button-text"> Continue </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

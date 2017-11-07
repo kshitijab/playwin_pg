@@ -121,22 +121,36 @@ AppNamespace.settings=function(){
               }
 
               window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);*/
-                function onSuccess(data){
-                  console.log(JSON.stringify(data));
-                }
-                function onError(err){
-                  console.log("error "+JSON.stringify(err));
-                }
+                // function onSuccess(data){
+                //   console.log(JSON.stringify(data));
+                // }
+                // function onError(err){
+                //   console.log("error "+JSON.stringify(err));
+                // }
 
-              window.plugins.socialsharing.shareViaEmail(
-                  '', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
-                  'App Query',
-                  ['help@playwin.esselgroup.com'], // TO: must be null or an array
-                  null, // CC: must be null or an array
-                  null, // BCC: must be null or an array
-                  onSuccess, // called when sharing worked, but also when the user cancelled sharing via email. On iOS, the callbacks' boolean result parameter is true when sharing worked, false if cancelled. On Android, this parameter is always true so it can't be used). See section "Notes about the successCallback" below.
-                  onError // called when sh*t hits the fan
-                );
+            //   window.plugins.socialsharing.shareViaEmail(
+            //       '', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
+            //       'App Query',
+            //       ['help@playwin.esselgroup.com'], // TO: must be null or an array
+            //       null, // CC: must be null or an array
+            //       null, // BCC: must be null or an array
+            //       onSuccess, // called when sharing worked, but also when the user cancelled sharing via email. On iOS, the callbacks' boolean result parameter is true when sharing worked, false if cancelled. On Android, this parameter is always true so it can't be used). See section "Notes about the successCallback" below.
+            //       onError // called when sh*t hits the fan
+            //     );
+            try {
+                cordova.plugins.email.open({
+                    to:      'help@playwin.esselgroup.com', 
+                    subject: 'App Query',
+                    body:    null
+                });
+            } catch (e) {
+                window.plugins.email.open({
+                    to:      'help@playwin.esselgroup.com',
+                    subject: 'App Query',
+                    body:    null
+                });
+            } 
+           
             }else{
                 AppNamespace.app.navigate(a.url);
             }
